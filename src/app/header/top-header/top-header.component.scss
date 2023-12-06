@@ -1,10 +1,5 @@
 $main-color : #ff4c3b;
 
-@mixin icon_style {
-    font-size: 14px;
-    height: 14px;
-}
-
 .top_header_container{
     background-color: #f8f8f8;
 }
@@ -72,7 +67,8 @@ $main-color : #ff4c3b;
 }
 
 .call_icon{
-    @include icon_style();
+    font-size: 14px;
+    height: 14px;
     color: $main-color;
 }
 

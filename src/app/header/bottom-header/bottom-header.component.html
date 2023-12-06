@@ -1,0 +1,78 @@
+<p class="bottom-header-container">
+    <mat-toolbar>
+        <mat-icon class="menu_icon">menu</mat-icon>
+        <img class="multikart-logo" src="../../../assets/images/multikart-logo.png" alt="multikart-logo">
+        <span class="example-spacer"></span>
+        <div>
+            <mat-list class="header_bottom_content" >
+                <!-- <mat-list-item class="header_bottom_item" *ngFor="let item of headerItems">
+                    <span>{{item}}</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <span *ngIf="item == 'features'" class="new-badge-box">
+                        <span class="new-badge">new</span>
+                    </span>
+                </mat-list-item> -->
+                <mat-list-item class="header_bottom_item">
+                    <span>home</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <mat-list class="test">
+                        <mat-list-item>
+                          {{ headerContent }}
+                        </mat-list-item>
+                      
+                        <ng-container *ngFor="let item of items">
+                          <mat-list-item *ngIf="item.link">
+                            <a [routerLink]="['/', item.link]">
+                              {{ item.name }}
+                            </a>
+                          </mat-list-item>
+                      
+                          <mat-list-item *ngIf="!item.link">
+                            {{ item.name }}
+                          </mat-list-item>
+                        </ng-container>
+                      </mat-list>
+                </mat-list-item>
+                <mat-list-item class="header_bottom_item">
+                    <span>shop</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </mat-list-item>
+                <mat-list-item class="header_bottom_item">
+                    <span>products</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </mat-list-item>
+                <mat-list-item class="header_bottom_item">
+                    <span>features</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <span class="new-badge-box">
+                        <span class="new-badge">new</span>
+                    </span>
+                </mat-list-item>
+                <mat-list-item class="header_bottom_item">
+                    <span>pages</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </mat-list-item><mat-list-item class="header_bottom_item">
+                    <span>blogs</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </mat-list-item>
+
+               
+
+
+
+                <!-- <mat-list-item *ngFor="let item of headerItems1 | keyvalue">
+                    {{item.key}}
+                    <div>
+                    {{item.value}}
+                    </div>
+                </mat-list-item> -->
+            </mat-list>
+        </div>
+        <div class="bottom_header_icon_box"> 
+            <img class="bottom_header_icon" src="../../../assets/images/search.png" alt="search">
+            <img class="bottom_header_icon" src="../../../assets/images/setting.png" alt="setting">
+            <img class="bottom_header_icon" src="../../../assets/images/cart.png" alt="cart">
+            <span id="mat-badge-content-0" aria-hidden="true" class="mat-badge-content mat-badge-active cart-badge">0</span>
+        </div>
+    </mat-toolbar>
+</p>

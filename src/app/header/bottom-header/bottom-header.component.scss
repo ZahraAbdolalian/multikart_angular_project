@@ -1,0 +1,140 @@
+$text-color : #222222;
+$main-color : #ff4c3b;
+
+
+
+.top_header_container{
+    background-color: #fff;
+}
+
+mat-toolbar {
+    background-color: transparent;
+    max-width: 1400px;
+    margin: 0 auto; 
+    padding-right: 27px;
+    padding-left: 8px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.menu_icon{
+    padding: 40px 45px 40px 0;
+    font-weight: 800;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.multikart-logo{
+    padding: 37px 0;
+    cursor: pointer;
+}
+
+.bottom_header_icon{
+    padding: 40px 0 40px 20px;
+    cursor: pointer;
+}
+
+.bottom_header_icon_box{
+    padding-left: 25px;
+}
+
+.header_bottom_content{
+    display: flex;
+}
+
+.header_bottom_item{
+    overflow: visible;
+    text-transform: uppercase;
+    color: $text-color;
+    letter-spacing: 0.07em;
+    position: relative;
+    padding: 0px 18px;
+    line-height: 23px;
+    cursor: pointer !important;
+    transition: all 0.5s ease 0s;
+
+    &:hover *{
+        color: $main-color;
+        transition: all 0.5s ease 0s;
+    }
+
+    i{
+        font-size: 10px;
+        position: absolute;
+        top: 39%;
+        display: block;
+        right: -3px;
+    }
+}
+
+
+.cart-badge{
+    background-color: $main-color;
+    width: 20px;
+    height: 20px;
+    top: 69px;
+    right: 85px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.new-badge-box{
+    position: absolute;
+}
+
+.new-badge {
+    background-color: $main-color;
+    color: #fff;
+    position: absolute;
+    top: -24px;
+    right: 54px;
+    font-size: 9px;
+    line-height: 11px;
+    padding: 2px 7px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.new-badge::before {
+    content: "";
+    position: absolute;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $main-color;
+    top: 15px;
+    left: 5px;
+}
+
+.submenu{
+    opacity: 0;
+    visibility: hidden;
+    text-transform: none;
+    box-shadow: 0 0 1px #ccc;
+    padding: 15px 0;
+    top: 61px;
+}
+
+
+
+// ////////////////////////////////
+
+.mat-list-item {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .mat-list-item:hover {
+    background-color: #eee;
+  }
+
+.test {
+    visibility: hidden;
+    opacity: 0;
+}
+  
