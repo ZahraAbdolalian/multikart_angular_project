@@ -10,6 +10,7 @@ import { BottomHeaderComponent } from './header/bottom-header/bottom-header.comp
 import { HomeSliderComponent } from './home/home-slider/home-slider.component';
 import { HomeBrandsComponent } from './home/home-brands/home-brands.component';
 import { HomeComponent } from './home/home.component';
+import { HomeBannerTimerComponent } from './home/home-banner-timer/home-banner-timer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     BottomHeaderComponent,
     HomeComponent,
     HomeSliderComponent,
-    HomeBrandsComponent
+    HomeBrandsComponent,
+    HomeBannerTimerComponent
   ],
   imports: [
     BrowserModule,
