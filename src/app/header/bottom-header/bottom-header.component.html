@@ -1,78 +1,174 @@
 <p class="bottom-header-container">
-    <mat-toolbar>
-        <mat-icon class="menu_icon">menu</mat-icon>
-        <img class="multikart-logo" src="../../../assets/images/multikart-logo.png" alt="multikart-logo">
-        <span class="example-spacer"></span>
-        <div>
-            <mat-list class="header_bottom_content" >
-                <!-- <mat-list-item class="header_bottom_item" *ngFor="let item of headerItems">
-                    <span>{{item}}</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                    <span *ngIf="item == 'features'" class="new-badge-box">
-                        <span class="new-badge">new</span>
-                    </span>
-                </mat-list-item> -->
-                <mat-list-item class="header_bottom_item">
-                    <span>home</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                    <mat-list class="test">
-                        <mat-list-item>
-                          {{ headerContent }}
+  <mat-toolbar>
+    <mat-icon class="menu_icon">menu</mat-icon>
+    <img
+      class="multikart-logo"
+      src="../../../assets/images/multikart-logo.png"
+      alt="multikart-logo"
+    />
+    <span class="example-spacer"></span>
+    <div>
+      <mat-list class="header_bottom_content">
+        <mat-list-item class="header_bottom_item">
+          <span class="header_item_title">home</span>
+          <i class="fa-solid fa-chevron-down header_item_icon"></i>
+          <mat-list class="header_submenu">
+            <ng-container *ngFor="let item of homeItems">
+              <mat-list-item class="header_submenu_item" *ngIf="item.link">
+                <a [routerLink]="['/', item.link]">
+                  {{ item.name }}
+                  <span class="angle_right" *ngIf="item.subSubmenu">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  </span>
+                </a>
+
+                <!-- <mat-list class="sub_submenu" *ngIf="item.subSubmenu">
+                    <ng-container *ngFor="let item of item.subSubmenu">
+                        {{item}}
+                        <mat-list-item >
+                            <a href="">{{ item }}</a>
                         </mat-list-item>
-                      
-                        <ng-container *ngFor="let item of items">
-                          <mat-list-item *ngIf="item.link">
-                            <a [routerLink]="['/', item.link]">
-                              {{ item.name }}
-                            </a>
-                          </mat-list-item>
-                      
-                          <mat-list-item *ngIf="!item.link">
-                            {{ item.name }}
-                          </mat-list-item>
-                        </ng-container>
-                      </mat-list>
-                </mat-list-item>
-                <mat-list-item class="header_bottom_item">
-                    <span>shop</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </mat-list-item>
-                <mat-list-item class="header_bottom_item">
-                    <span>products</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </mat-list-item>
-                <mat-list-item class="header_bottom_item">
-                    <span>features</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                    <span class="new-badge-box">
-                        <span class="new-badge">new</span>
-                    </span>
-                </mat-list-item>
-                <mat-list-item class="header_bottom_item">
-                    <span>pages</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </mat-list-item><mat-list-item class="header_bottom_item">
-                    <span>blogs</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </mat-list-item>
+                    </ng-container>
+                </mat-list> -->
+              </mat-list-item>
 
-               
+              <!-- <mat-list-item class="header_submenu_item" *ngIf="!item.link">
+                {{ item.name }}
+                <span class="angle_right"
+                  ><i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+              </mat-list-item> -->
+            </ng-container>
+          </mat-list>
+        </mat-list-item>
+        <mat-list-item class="header_bottom_item">
+          <span class="header_item_title">shop</span>
+          <i class="fa-solid fa-chevron-down header_item_icon"></i>
 
+          <mat-list class="header_submenu">
+            <ng-container *ngFor="let item of shopItems">
+              <mat-list-item class="header_submenu_item" *ngIf="item.link">
+                <a [routerLink]="['/', item.link]">
+                  {{ item.name }}
+                </a>
+              </mat-list-item>
+            </ng-container>
+          </mat-list>
+        </mat-list-item>
 
+        <mat-list-item class="header_bottom_item">
+          <span class="header_item_title">products</span>
+          <i class="fa-solid fa-chevron-down header_item_icon"></i>
+          <mat-list class="header_submenu">
+            <ng-container *ngFor="let item of productsItem">
+              <mat-list-item class="header_submenu_item" *ngIf="item.link">
+                <a [routerLink]="['/', item.link]">
+                  {{ item.name }}
+                  <span class="angle_right" *ngIf="item.subSubmenu">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  </span>
+                </a>
 
-                <!-- <mat-list-item *ngFor="let item of headerItems1 | keyvalue">
-                    {{item.key}}
-                    <div>
-                    {{item.value}}
-                    </div>
-                </mat-list-item> -->
-            </mat-list>
-        </div>
-        <div class="bottom_header_icon_box"> 
-            <img class="bottom_header_icon" src="../../../assets/images/search.png" alt="search">
-            <img class="bottom_header_icon" src="../../../assets/images/setting.png" alt="setting">
-            <img class="bottom_header_icon" src="../../../assets/images/cart.png" alt="cart">
-            <span id="mat-badge-content-0" aria-hidden="true" class="mat-badge-content mat-badge-active cart-badge">0</span>
-        </div>
-    </mat-toolbar>
+                <!-- <mat-list class="sub_submenu" *ngIf="item.subSubmenu">
+                    <ng-container *ngFor="let item of item.subSubmenu">
+                        {{item}}
+                        <mat-list-item >
+                            <a href="">{{ item }}</a>
+                        </mat-list-item>
+                    </ng-container>
+                </mat-list> -->
+              </mat-list-item>
+            </ng-container>
+          </mat-list>
+        </mat-list-item>
+        <mat-list-item class="header_bottom_item">
+          <span class="header_item_title">features</span>
+          <i class="fa-solid fa-chevron-down header_item_icon"></i>
+          <span class="new-badge-box">
+            <span class="new-badge">new</span>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="header_bottom_item">
+          <span class="header_item_title">pages</span>
+          <i class="fa-solid fa-chevron-down header_item_icon"></i>
+          <mat-list class="header_submenu">
+            <ng-container *ngFor="let item of pagesItem">
+              <mat-list-item class="header_submenu_item" *ngIf="item.link">
+                <a [routerLink]="['/', item.link]">
+                  {{ item.name }}
+                  <span class="angle_right" *ngIf="item.subSubmenu">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  </span>
+                  <span class="new_tag" *ngIf="item.newTag">New</span>
+                </a>
+
+                <!-- <mat-list class="sub_submenu" *ngIf="item.subSubmenu">
+                    <ng-container *ngFor="let item of item.subSubmenu">
+                        {{item}}
+                        <mat-list-item >
+                            <a href="">{{ item }}</a>
+                        </mat-list-item>
+                    </ng-container>
+                </mat-list> -->
+              </mat-list-item>
+            </ng-container>
+          </mat-list>
+        </mat-list-item>
+        <mat-list-item class="header_bottom_item">
+          <span class="header_item_title">blogs</span>
+          <i class="fa-solid fa-chevron-down header_item_icon"></i>
+          <mat-list class="header_submenu">
+            <ng-container *ngFor="let item of blogItems">
+              <mat-list-item class="header_submenu_item" *ngIf="item.link">
+                <a [routerLink]="['/', item.link]">
+                  {{ item.name }}
+                </a>
+              </mat-list-item>
+            </ng-container>
+          </mat-list>
+        </mat-list-item>
+      </mat-list>
+    </div>
+
+    <div class="bottom_header_icon_container">
+      <div class="bottom_header_icon_box">
+        <a href="">
+          <img
+            class="bottom_header_icon"
+            src="../../../assets/images/search.png"
+            alt="search"
+          />
+        </a>
+      </div>
+      <div class="bottom_header_icon_box">
+        <a href="">
+          <img
+            class="bottom_header_icon"
+            src="../../../assets/images/setting.png"
+            alt="setting"
+          />
+        </a>
+      </div>
+      <div class="bottom_header_icon_box">
+        <a href="">
+          <img
+            class="bottom_header_icon"
+            src="../../../assets/images/cart.png"
+            alt="cart"
+          />
+          <span
+            id="mat-badge-content-0"
+            aria-hidden="true"
+            class="mat-badge-content mat-badge-active cart-badge"
+            >0</span
+          >
+        </a>
+        <mat-list class="bottom_header_icon_hover">
+          <mat-list-item
+            ><a href="#">Your cart is currently empty.</a></mat-list-item
+          >
+        </mat-list>
+      </div>
+    </div>
+  </mat-toolbar>
 </p>
