@@ -140,6 +140,7 @@
           />
         </a>
       </div>
+
       <div class="bottom_header_icon_box">
         <a href="">
           <img
@@ -148,7 +149,20 @@
             alt="setting"
           />
         </a>
+        <mat-list class="bottom_header_icon_hover">
+          <ng-container *ngFor="let item of settingItems">
+            <div>
+              <h4>Language</h4>
+              <mat-list-item *ngFor="let item of item.language"><a href="">{{ item }}</a></mat-list-item>
+            </div>
+            <div>
+              <h4>Currency</h4>
+              <mat-list-item *ngFor="let item of item.currency"><a href="">{{item}}</a></mat-list-item>
+            </div>
+          </ng-container>
+        </mat-list>
       </div>
+
       <div class="bottom_header_icon_box">
         <a href="">
           <img

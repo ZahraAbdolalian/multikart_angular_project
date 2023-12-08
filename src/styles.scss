@@ -33,6 +33,10 @@ $multikart_angular_project-theme: mat.define-light-theme((color: (primary: $mult
 
 // $main-color : #ff4c3b;
 
+:root{
+  $main-color : #ff4c3b; 
+}
+
 html,
 body {
   height: 100%;
