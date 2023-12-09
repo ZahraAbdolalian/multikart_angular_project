@@ -11,6 +11,7 @@ import { HomeSliderComponent } from './home/home-slider/home-slider.component';
 import { HomeBrandsComponent } from './home/home-brands/home-brands.component';
 import { HomeComponent } from './home/home.component';
 import { HomeBannerTimerComponent } from './home/home-banner-timer/home-banner-timer.component';
+import { HomeCategoryComponent } from './home/home-category/home-category.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeBannerTimerComponent } from './home/home-banner-timer/home-banner-t
     HomeComponent,
     HomeSliderComponent,
     HomeBrandsComponent,
-    HomeBannerTimerComponent
+    HomeBannerTimerComponent,
+    HomeCategoryComponent
   ],
   imports: [
     BrowserModule,

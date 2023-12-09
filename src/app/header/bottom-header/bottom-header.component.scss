@@ -104,6 +104,7 @@ mat-toolbar {
     position: absolute;
     top: 40px;
     width: 200px;
+    background-color: #fff;
 }
 
 
@@ -140,8 +141,8 @@ mat-toolbar {
 
 
 .sub_submenu {
-    // opacity: 0;
-    // visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     text-transform: none;
     box-shadow: 0 0 1px #ebebeb;
     padding: 15px 0;

@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -18,7 +19,8 @@ const MaterialComponents = [
   MatIconModule,
   MatButtonModule,
   MatMenuModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatCardModule
 ]
 
 @NgModule({
