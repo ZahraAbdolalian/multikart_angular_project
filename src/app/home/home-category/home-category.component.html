@@ -1,20 +1,14 @@
 <section class="category">
-    <div class="category_product_box" *ngFor="let item of categoryItems">
+    <div class="category_product_box" *ngFor="let item of categoryList">
         <mat-card ng-no-style class="category_product" >
             <div>
-                <img class="category_img" [src]="item.imgUrl" alt="watch1">
+                <img class="category_img" [src]="item.image" alt="watch1">
             </div>
             <mat-card-header class="category_title_box">
                 <mat-card-title class="category_title">{{item.title}}</mat-card-title>
             </mat-card-header>
-            <mat-card-content>
-                <mat-list class="category_list">
-                    <mat-list-item 
-                    class="category_item" 
-                    *ngFor="let item of item.content">
-                    <a class="category_item_link" href="#">{{item}}</a>
-                </mat-list-item>
-                </mat-list>
+            <mat-card-content class="category_item_content">
+                {{item.description}}
             </mat-card-content>
             <mat-card-actions>
                 <a class="category_link" href="collection.html">view more</a>
@@ -22,3 +16,5 @@
         </mat-card>
     </div>
 </section>
+
+<button (click)="test()">click me</button>

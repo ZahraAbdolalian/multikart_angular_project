@@ -31,33 +31,39 @@ a {
     -o-border-radius: 0;
 }
 
+.category_img {
+    width: 108px;
+    height: 175px;
+}
+
 .category_title_box {
     justify-content: center;
+    overflow: hidden;
 }
 
 .category_title {
+    width: 240px;
     padding: 14px 0;
     color: #2d2a25;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.category_list {
-    list-style: none;
-    text-transform: capitalize;
-}
 
-.category_item {
-    margin-top: 5px;
-    height: auto;
-}
-
-.category_item_link {
+.category_item_content {
     color: #948e8c;
     transition: 0.5s ease;
     font-size: 14px;
     line-height: 21px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    white-space: pre-wrap;
 
     &:hover {
         color: $main-color;
@@ -115,7 +121,6 @@ mat-card-actions {
     background: conic-gradient(from 180deg at top 1px right 1px, var($_g)) var($_i, 200%) 0 /200% var($_i, 1px) no-repeat,
         conic-gradient(at bottom 1px left 1px, var($_g)) 0 var($_i, 200%)/var($_i, 1px) 200% no-repeat;
     transition: 0.3s, background-position 0.3s 0.3s;
-    cursor: pointer;
     -webkit-transition: 0.3s, background-position 0.3s 0.3s;
     -moz-transition: 0.3s, background-position 0.3s 0.3s;
     -ms-transition: 0.3s, background-position 0.3s 0.3s;
