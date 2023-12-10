@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { HomeBannerTimerComponent } from './home/home-banner-timer/home-banner-timer.component';
 import { HomeCategoryComponent } from './home/home-category/home-category.component';
 import { HomeTopTrendingComponent } from './home/home-top-trending/home-top-trending.component';
+import { HomeBottomTrendingComponent } from './home/home-bottom-trending/home-bottom-trending.component';
+import { HomeBannerComponent } from './home/home-banner/home-banner.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HomeTopTrendingComponent } from './home/home-top-trending/home-top-tren
     HomeBrandsComponent,
     HomeBannerTimerComponent,
     HomeCategoryComponent,
-    HomeTopTrendingComponent
+    HomeTopTrendingComponent,
+    HomeBottomTrendingComponent,
+    HomeBannerComponent
   ],
   imports: [
     BrowserModule,

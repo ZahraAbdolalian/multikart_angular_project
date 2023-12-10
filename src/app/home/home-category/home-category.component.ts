@@ -9,7 +9,6 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./home-category.component.scss']
 })
 export class HomeCategoryComponent implements OnInit {
-
   categoryList: Post[] = []
 
   constructor(private apiService: ApiService) { }

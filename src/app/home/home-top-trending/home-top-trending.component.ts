@@ -16,11 +16,9 @@ export class HomeTopTrendingComponent implements OnInit{
   constructor (private apiService:ApiService){}
 
   ngOnInit(): void {
-
     this.apiService.getSomeProducts(8).subscribe(data => {
       this.newArrivalItems = data
       console.log(this.newArrivalItems);
     })
-
   }
 }

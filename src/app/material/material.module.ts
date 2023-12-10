@@ -9,6 +9,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -21,7 +22,8 @@ const MaterialComponents = [
   MatMenuModule,
   MatBadgeModule,
   MatCardModule,
-  MatTabsModule
+  MatTabsModule,
+  MatProgressSpinnerModule
 ]
 
 @NgModule({
