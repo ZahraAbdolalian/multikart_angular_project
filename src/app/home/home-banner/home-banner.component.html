@@ -1,33 +1,13 @@
 <section class="banner">
     <div class="banner_container">
-        <div class="banner_item">
+        <div class="banner_item" *ngFor="let item of bannerItems">
             <a href="collection.html">
                 <div class="banner_box">
-                    <img class="banner_image" src="../../../assets/images/banner1.jpg" alt="banner1">
-                    <div class="banner_flex">
+                    <img class="banner_image" [src]="item.imgUrl" alt="banner1">
+                    <div class="banner_flex" *ngIf="item.title">
                         <div class="banner_info">
-                            <h4 class="banner_info_subtitle">minimum 10% off</h4>
-                            <h2 class="banner_info_title">new watch</h2>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="banner_item">
-            <a href="collection.html">
-                <div class="banner_box">
-                    <img class="banner_image" src="../../../assets/images/banner2.jpg" alt="banner2">
-                </div>
-            </a>
-        </div>
-        <div class="banner_item">
-            <a href="collection.html">
-                <div class="banner_box">
-                    <img class="banner_image" src="../../../assets/images/banner3.jpg" alt="banner3">
-                    <div class="banner_flex">
-                        <div class="banner_info">
-                            <h4 class="banner_info_subtitle">minimum 10% off</h4>
-                            <h2 class="banner_info_title">gold watch</h2>
+                            <h4 class="banner_info_subtitle">{{item.subtitle}}</h4>
+                            <h2 class="banner_info_title">{{item.title}}</h2>
                         </div>
                     </div>
                 </div>
