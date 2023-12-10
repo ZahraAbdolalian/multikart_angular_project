@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 import { Post } from 'src/app/post.model';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-home-top-trending',
@@ -13,12 +13,14 @@ export class HomeTopTrendingComponent implements OnInit{
   starsArray: any[] = new Array(5);
   newArrivalItems :Post[] = []
 
-  constructor (private http : HttpClient){}
+  constructor (private apiService:ApiService){}
 
   ngOnInit(): void {
-      this.http.get<Post[]>('https://fakestoreapi.com/products?limit=8').subscribe(data => {
-        this.newArrivalItems = data
-        console.log(this.newArrivalItems);
-      })
+
+    this.apiService.getSomeProducts(8).subscribe(data => {
+      this.newArrivalItems = data
+      console.log(this.newArrivalItems);
+    })
+
   }
 }

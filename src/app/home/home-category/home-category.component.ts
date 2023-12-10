@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs';
+
 import { Post } from 'src/app/post.model';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-home-category',
@@ -12,21 +12,24 @@ export class HomeCategoryComponent implements OnInit {
 
   categoryList: Post[] = []
 
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.http.get<Post[]>('https://fakestoreapi.com/products/category/electronics?limit=1')
+    this.apiService.getSomeProductFromElectronics(1)
       .subscribe(data => {
-        this.categoryList = [...this.categoryList ,...data]
+        this.categoryList = [...this.categoryList, ...data]
       })
-    this.http.get<Post[]>('https://fakestoreapi.com/products/category/jewelery?limit=1').subscribe(data => {
-        this.categoryList = [...this.categoryList , ...data]
+    this.apiService.getSomeProductFromJewelery(1)
+      .subscribe(data => {
+        this.categoryList = [...this.categoryList, ...data]
+      })
+    this.apiService.getSomeProductFromMenClothing(1)
+    .subscribe(data => {
+      this.categoryList = [...this.categoryList, ...data]
     })
-    this.http.get<Post[]>("https://fakestoreapi.com/products/category/men's clothing?limit=1").subscribe(data => {
-        this.categoryList = [...this.categoryList , ...data]
-    })
-    this.http.get<Post[]>("https://fakestoreapi.com/products/category/women's clothing?limit=1").subscribe(data => {
-        this.categoryList = [...this.categoryList , ...data]
+    this.apiService.getSomeProductFromWomenClothing(1)
+    .subscribe(data => {
+      this.categoryList = [...this.categoryList, ...data]
     })
   }
 
