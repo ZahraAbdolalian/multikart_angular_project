@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
 import { Post } from 'src/app/post.model';
 
 @Component({
@@ -8,6 +9,7 @@ import { Post } from 'src/app/post.model';
   styleUrls: ['./home-top-trending.component.scss']
 })
 export class HomeTopTrendingComponent implements OnInit{
+  labels = ['NEW ARRIVAL','ON SALE','BEST SELLERS']
   starsArray: any[] = new Array(5);
   newArrivalItems :Post[] = []
 
@@ -17,7 +19,6 @@ export class HomeTopTrendingComponent implements OnInit{
       this.http.get<Post[]>('https://fakestoreapi.com/products?limit=8').subscribe(data => {
         this.newArrivalItems = data
         console.log(this.newArrivalItems);
-        
       })
   }
 }

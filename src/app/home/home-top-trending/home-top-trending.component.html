@@ -1,92 +1,5 @@
 <section class="trending_products_part1">
   <div>
-      <div class="trending_title">
-          <h2 class="title_h2">trending products</h2>
-
-          <div class="page_line">
-              <span class="page_line_span"></span>
-          </div>
-      </div>
-
-      <div class="trending_list_box">
-          <ul class="trending_list">
-              <li class="trending_list_item"><a class="trending_list_link selected" href="javascript: void(0)">new arrival</a>
-              </li>
-              <li class="trending_list_item"><a class="trending_list_link " href="javascript: void(0)">on sale</a></li>
-              <li class="trending_list_item"><a class="trending_list_link " href="javascript: void(0)">best sellers</a></li>
-          </ul>
-      </div>
-  </div>
-  <div class="new_arrival selected_container">
-      <div class="trending_container">
-        <div class="trending_product" *ngFor="let item of newArrivalItems">
-          <div class="trending_product_box">
-              <div class="trending_img_box">
-                   <span class="trending_new">
-                    new
-                   </span>
-                  <a href="productDetails.html?id=${product.id}">
-                  <img class="trending_img" [src]="item.image" alt="">
-                  </a>
-                  <div class="trending_icons">
-                      <a title="Add to cart" class="trending_icons_link" href="#">
-                          <i class="fa fa-shopping-cart fa-flip-horizontal shopping shopping_cart"></i>
-                      </a>
-  
-                      <a title="Add to Wishlist" class="trending_icons_link" href="#">
-                       <i class="fa fa-heart shopping heart"></i>
-                      </a>
-  
-                      <a title="Quick View" class="trending_icons_link" href="#">
-                          <i class="fa-solid fa-magnifying-glass shopping magnifying"></i>
-                      </a>
-  
-                      <a title="Compare" class="trending_icons_link" href="#">
-                          <i class="fa fa-refresh shopping refresh"></i>
-                      </a>
-                  </div>
-              </div>
-          <div class="trending_detail">
-              <div class="stars">
-                  <div class="star">★</div>
-                  <div class="star">★</div>
-                  <div class="star">★</div>
-                  <div class="star">★</div>
-                  <div class="star">★</div>
-              </div>
-              <a href="">
-                  <h6 class="trending_name">product.name</h6>
-              </a>
-              <h4 class="trending_discounted_price"> product.discountedPrice
-                  <del class="trending_price">product.price</del>
-              </h4>
-  
-              <ul class="trending_color_list">
-  
-              </ul>
-              
-          </div>
-  
-      </div>
-  </div>
-      </div>
-  </div>
-  <div class="on_sale">
-      <div class="trending_container">
-      
-      </div>
-  </div>
-  <div class="best_sellers">
-      <div class="trending_container">
-      </div>
-  </div>
-</section>
-
-
-
-<!-- 
-<section class="trending_products_part1">
-  <div>
     <div class="trending_title">
       <h2 class="title_h2">trending products</h2>
 
@@ -96,63 +9,67 @@
     </div>
 
     <div class="trending_list_box">
-      <mat-tab-group class="trending_list" mat-stretch-tabs="false" mat-align-tabs="center">
-        <mat-tab label="NEW ARRIVAL" class="trending_list_item">
-            <div class="selected_container">
-                <div class="trending_container">
-                  <div class="trending_product">
-                    <div class="trending_product_box" *ngFor="let item of newArrivalItems">
+      <mat-tab-group
+        mat-stretch-tabs="false"
+        mat-align-tabs="center"
+        class="trending_list"
+      >
+        <mat-tab *ngFor="let item of labels" [label]="item">
+          <div>
+            <div class="trending_container">
+              <div
+                class="trending_product"
+                *ngFor="let item of newArrivalItems">
+                <div class="trending_product_box">
+                  <div class="trending_img_container">
+                    <span class="trending_new"> new </span>
+                    <a href="#">
                       <div class="trending_img_box">
-                        <span class="trending_new"> new </span>
-                        <a href="">
-                          <img class="trending_img" [src]="item.image" alt="image" />
-                        </a>
-                        <div class="trending_icons">
-                          <a title="Add to cart" class="trending_icons_link" href="#">
-                            <i class="fa fa-shopping-cart fa-flip-horizontal shopping"></i>
-                          </a>
-            
-                          <a title="Add to Wishlist" class="trending_icons_link" href="#">
-                            <i class="fa fa-heart shopping heart"></i>
-                          </a>
-            
-                          <a title="Quick View" class="trending_icons_link" href="#">
-                            <i class="fa-solid fa-magnifying-glass shopping magnifying"></i>
-                          </a>
-            
-                          <a title="Compare" class="trending_icons_link" href="#">
-                            <i class="fa fa-refresh shopping refresh"></i>
-                          </a>
-                        </div>
+                        <img
+                          class="trending_img"
+                          [src]="item.image"
+                          alt="trending_img"/>
                       </div>
-                      <div class="trending_detail">
-                        <div class="stars">
-                          <div class="star" *ngFor="let star of starsArray">★</div>
-                        </div>
-                        <a href="">
-                          <h6 class="trending_name">product.name</h6>
-                        </a>
-                        <h4 class="trending_discounted_price">
-                          product.discountedPrice
-                          <del class="trending_price">product.price</del>
-                        </h4>
-                        <ul class="trending_color_list"></ul>
-                      </div>
+                    </a>
+                    <div class="trending_icons">
+                      <a
+                        title="Add to cart"
+                        class="trending_icons_link"
+                        href="#">
+                        <i class="fa fa-shopping-cart fa-flip-horizontal shopping"></i>
+                      </a>
+                      <a
+                        title="Add to Wishlist"
+                        class="trending_icons_link"
+                        href="#">
+                        <i class="fa fa-heart shopping heart"></i>
+                      </a>
+                      <a
+                        title="Quick View"
+                        class="trending_icons_link"
+                        href="#">
+                        <i class="fa-solid fa-magnifying-glass shopping magnifying"></i>
+                      </a>
+                      <a title="Compare" class="trending_icons_link" href="#">
+                        <i class="fa fa-refresh shopping refresh"></i>
+                      </a>
                     </div>
+                  </div>
+                  <div class="trending_detail">
+                    <div class="stars">
+                      <div class="star" *ngFor="let item of starsArray">★</div>
+                    </div>
+                    <a href="">
+                      <h6 class="trending_name">{{ item.title }}</h6>
+                    </a>
+                    <h4 class="trending_price">${{ item.price }}</h4>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
         </mat-tab>
-        <mat-tab label="ON SALE">Content 2</mat-tab>
-        <mat-tab label="BEST SELLERS">Content 3</mat-tab>
       </mat-tab-group>
     </div>
   </div>
-  
-  <div class="on_sale">
-    <div class="trending_container"></div>
-  </div>
-  <div class="best_sellers">
-    <div class="trending_container"></div>
-  </div>
-</section> -->
+</section>
