@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { Post } from 'src/app/post.model';
 
 @Component({
@@ -7,42 +8,27 @@ import { Post } from 'src/app/post.model';
   templateUrl: './home-category.component.html',
   styleUrls: ['./home-category.component.scss']
 })
-export class HomeCategoryComponent implements OnInit{
-  categoryItems = [
-    {
-      title: 'watch model', imgUrl: '../../../assets/images/test1.png',
-      content: ['D1 milano', 'damaskeening', 'diving watch', 'dollar watch']
-    },
-    {
-      title: 'watch model', imgUrl: '../../../assets/images/test1.png',
-      content: ['D1 milano', 'damaskeening', 'diving watch', 'dollar watch']
-    },
-    {
-      title: 'watch model', imgUrl: '../../../assets/images/test1.png',
-      content: ['D1 milano', 'damaskeening', 'diving watch', 'dollar watch']
-    },
-    {
-      title: 'watch model', imgUrl: '../../../assets/images/test1.png',
-      content: ['D1 milano', 'damaskeening', 'diving watch', 'dollar watch']
-    },
-  ]
+export class HomeCategoryComponent implements OnInit {
 
-  categoryList !: Post[]
-  categoryTest !: Object
+  categoryList: Post[] = []
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<Post[]>('https://fakestoreapi.com/products?limit=4').subscribe(data => {
-      this.categoryList = data
-      console.log(this.categoryList);
+    this.http.get<Post[]>('https://fakestoreapi.com/products/category/electronics?limit=1')
+      .subscribe(data => {
+        this.categoryList = [...this.categoryList ,...data]
+      })
+    this.http.get<Post[]>('https://fakestoreapi.com/products/category/jewelery?limit=1').subscribe(data => {
+        this.categoryList = [...this.categoryList , ...data]
+    })
+    this.http.get<Post[]>("https://fakestoreapi.com/products/category/men's clothing?limit=1").subscribe(data => {
+        this.categoryList = [...this.categoryList , ...data]
+    })
+    this.http.get<Post[]>("https://fakestoreapi.com/products/category/women's clothing?limit=1").subscribe(data => {
+        this.categoryList = [...this.categoryList , ...data]
     })
   }
 
-  test() {
-    this.http.get<Post[]>('https://fakestoreapi.com/products?limit=4').subscribe(data => {
-      this.categoryList = data
-      console.log(this.categoryList);
-    })
-  }
+
 }

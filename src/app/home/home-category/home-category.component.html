@@ -1,11 +1,11 @@
 <section class="category">
-    <div class="category_product_box" *ngFor="let item of categoryList">
+    <div class="category_product_box" *ngFor="let item of categoryList;let i = index">
         <mat-card ng-no-style class="category_product" >
             <div>
                 <img class="category_img" [src]="item.image" alt="watch1">
             </div>
             <mat-card-header class="category_title_box">
-                <mat-card-title class="category_title">{{item.title}}</mat-card-title>
+                <mat-card-title class="category_title">{{item.category}}</mat-card-title>
             </mat-card-header>
             <mat-card-content class="category_item_content">
                 {{item.description}}
@@ -16,5 +16,3 @@
         </mat-card>
     </div>
 </section>
-
-<button (click)="test()">click me</button>
