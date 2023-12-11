@@ -18,6 +18,11 @@ import { HomeBottomTrendingComponent } from './home/home-bottom-trending/home-bo
 import { HomeBannerComponent } from './home/home-banner/home-banner.component';
 import { HomeSpecialProductComponent } from './home/home-special-product/home-special-product.component';
 import { HomeRecentStoryComponent } from './home/home-recent-story/home-recent-story.component';
+import { HomeServiceComponent } from './home/home-service/home-service.component';
+import { FooterComponent } from './footer/footer.component';
+import { TopFooterComponent } from './footer/top-footer/top-footer.component';
+import { BottomFooterComponent } from './footer/bottom-footer/bottom-footer.component';
+import { SubFooterComponent } from './footer/sub-footer/sub-footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,12 @@ import { HomeRecentStoryComponent } from './home/home-recent-story/home-recent-s
     HomeBottomTrendingComponent,
     HomeBannerComponent,
     HomeSpecialProductComponent,
-    HomeRecentStoryComponent
+    HomeRecentStoryComponent,
+    HomeServiceComponent,
+    FooterComponent,
+    TopFooterComponent,
+    BottomFooterComponent,
+    SubFooterComponent
   ],
   imports: [
     BrowserModule,

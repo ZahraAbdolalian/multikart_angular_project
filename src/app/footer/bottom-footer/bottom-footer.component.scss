@@ -1,0 +1,139 @@
+$main-color : #ff4c3b;
+
+a {
+    text-decoration: none;
+}
+
+.footer_bottom {
+    max-width: 1400px;
+    padding: 70px 12px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.footer_bottom_container {
+    padding: 0px 12px;
+}
+
+.footer_bottom_left {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer_bottom_logo {
+    margin-bottom: 5px;
+}
+
+.footer_bottom_text {
+    color: #777777;
+    font-size: 14px;
+    letter-spacing: 0.42px;
+    line-height: 32px;
+}
+
+.footer_bottom_icon {
+    margin-top: 16px;
+}
+
+mat-list-item {
+    width: auto;
+    height: auto !important;
+    padding-left: 0;
+}
+
+.footer_bottom_icon_list {
+    display: flex;
+    align-items: center;
+}
+
+.footer_bottom_icon_item {
+    padding-right: 40px;
+}
+
+.footer_bottom_i {
+    color: #000000;
+    font-size: 20px;
+    transition: 0.5s ease;
+
+    &:hover {
+        color: $main-color;
+        transition: 0.5s ease;
+    }
+}
+
+.footer_bottom_center {
+    padding-right: 12px;
+    padding-left: 12px;
+    width: 22%;
+}
+
+.footer_margin {
+    margin-left: 8%;
+}
+
+.footer_bottom_center_title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.54px;
+    margin-bottom: 25px;
+}
+
+.footer_bottom_center_h4 {
+    color: #222222;
+}
+
+.footer_bottom_center_item {
+    padding-top: 7px;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #777777;
+    line-height: 28px;
+}
+
+.footer_bottom_center_link {
+    color: #777777 !important;
+    padding: 0;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        background-color: $main-color;
+        transition: 0.5s ease;
+        height: 2px;
+        width: 0;
+        top: 20px;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+} 
+
+.footer_bootom_item_left {
+    color: #777777;
+    padding-left: 25px;
+    padding-top: 5px;
+    position: relative;
+
+    div {
+        text-wrap: wrap;
+    }
+
+    &:hover {
+        color: #999999;
+        transition: all 0.3s ease;
+    }
+}
+
+.footer_bottom_center_i {
+    position: absolute;
+    left: 0;
+    top: 11px;
+}

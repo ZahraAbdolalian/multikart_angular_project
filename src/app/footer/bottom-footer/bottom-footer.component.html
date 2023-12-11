@@ -1,0 +1,82 @@
+<div class="footer_bottom">
+  <div class="footer_bottom_left">
+    <div class="footer_bottom_logo">
+      <img src="../../../assets/images/multikart-logo.png" alt="logo" />
+    </div>
+    <p class="footer_bottom_text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam,
+    </p>
+
+    <div class="footer_bottom_icon">
+      <mat-list class="footer_bottom_icon_list">
+        <mat-list-item
+          class="footer_bottom_icon_item"
+          *ngFor="let iconName of iconsList"
+        >
+          <a href="#">
+            <i
+              aria-hidden="true"
+              class="footer_bottom_i fa"
+              [class]="iconName"
+            ></i>
+          </a>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+
+  <div class="footer_bottom_center footer_margin">
+    <div class="footer_bottom_center_title">
+      <h4 class="footer_bottom_center_h4">Categories</h4>
+    </div>
+    <div class="footer_bottom_center_content">
+      <mat-list>
+        <mat-list-item
+          class="footer_bottom_center_item list_hov_item"
+          *ngFor="let category of categoriesList"
+        >
+          <a matListItemTitle class="footer_bottom_center_link" href="#">{{
+            category
+          }}</a>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+  <div class="footer_bottom_center">
+    <div class="footer_bottom_center_title">
+      <h4 class="footer_bottom_center_h4">why we choose</h4>
+    </div>
+    <div class="footer_bottom_center_content">
+      <mat-list>
+        <mat-list-item
+          class="footer_bottom_center_item list_hov_item"
+          *ngFor="let item of chooseList"
+        >
+          <a matListItemTitle class="footer_bottom_center_link" href="#">{{
+            item
+          }}</a>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+  <div class="footer_bottom_center">
+    <div class="footer_bottom_center_title">
+      <h4 class="footer_bottom_center_h4">store information</h4>
+    </div>
+    <div class="footer_bottom_center_content">
+      <mat-list>
+        <mat-list-item
+          class="footer_bottom_center_item"
+          *ngFor="let item of informationsList"
+        >
+          <div class="footer_bootom_item_left">
+            <i class="footer_bottom_center_i fa" [class]="item.icon"></i>
+            <div>{{ item.text }}</div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

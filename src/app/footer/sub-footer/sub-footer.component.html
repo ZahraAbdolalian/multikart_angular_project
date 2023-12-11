@@ -1,0 +1,18 @@
+<div class="sub_footer">
+    <div class="sub_footer_container">
+        <div class="sub_footer_left">
+            <p class="sub_footer_text">
+                <i class="fa fa-copyright"></i>
+                2023 theme forest powered by pixelstrap
+            </p>
+        </div>
+
+        <div class="sub_footer_right">
+            <mat-list class="sub_footer_icon_list">
+                <mat-list-item *ngFor="let item of paymentCards">
+                    <img class="sub_footer_icon" [src]="item.imgUrl" [alt]="item.name">
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+</div>
