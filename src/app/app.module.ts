@@ -26,6 +26,7 @@ import { SubFooterComponent } from './footer/sub-footer/sub-footer.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CollectionFilterComponent } from './product-details/collection-filter/collection-filter.component';
 import { ProductServiceComponent } from './product-details/product-service/product-service.component';
+import { NewProductComponent } from './product-details/new-product/new-product.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ProductServiceComponent } from './product-details/product-service/produ
     SubFooterComponent,
     ProductDetailsComponent,
     CollectionFilterComponent,
-    ProductServiceComponent
+    ProductServiceComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,
