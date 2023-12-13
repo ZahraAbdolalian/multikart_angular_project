@@ -7,7 +7,11 @@
         </div>
     </div>
 
-    <div class="special_container">
+    <div class="spinner" *ngIf="!productsArray">
+        <mat-spinner color="primary" value="75"></mat-spinner>
+      </div>
+
+    <div class="special_container" *ngIf="productsArray">
         <div class="special_box">
             <div class="special_item" *ngFor="let item of productsArray.slice(0,2)">
                 <a href="#">

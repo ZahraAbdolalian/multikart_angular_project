@@ -8,14 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
-    const scrollWindow = function () {
-      if (window.scrollY != 0) {
-        setTimeout(function () {
-          window.scrollTo(0, window.scrollY - 50);
-          scrollWindow();
-        }, 10);
-      }
-    };
-    scrollWindow()
+    
   }
 }

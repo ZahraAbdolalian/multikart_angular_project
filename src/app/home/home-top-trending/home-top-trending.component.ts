@@ -12,7 +12,7 @@ import { ApiService } from 'src/app/service/api.service';
 export class HomeTopTrendingComponent implements OnInit{
   labels = ['NEW ARRIVAL','ON SALE','BEST SELLERS']
   starsArray: any[] = new Array(5);
-  newArrivalItems :Post[] = []
+  newArrivalItems !:Post[]
 
   constructor (
     private apiService:ApiService,

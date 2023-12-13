@@ -1,17 +1,21 @@
-<div class="product_box_right">
+<div class="spinner" *ngIf="!product">
+    <mat-spinner color="primary" value="75"></mat-spinner>
+</div>
+
+<div class="product_box_right" *ngIf="product">
     <div class="product_box_right_img">
-        <img class="main_img" src="../../../assets/images/test2.jpg" alt="">
+        <img class="main_img" [src]="product.image" alt="">
         <div class="product_all_img">
         </div>
     </div>
     <div class="product_box_right_infos">
         <div class="product_details">
-            <h2 class="product_name">name</h2>
+            <h2 class="product_name">{{product.title}}</h2>
             <h4 class="product_discount_price">
-                <del>discountedPrice</del>
+                <del>{{priceBeforeDiscount}}</del>
                 <span>40% Off</span>
             </h4>
-            <h3 class="product_price">price</h3>
+            <h3 class="product_price">{{product.price}}</h3>
             <ul class="product_color">
 
             </ul>

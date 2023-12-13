@@ -206,3 +206,9 @@ a {
     color: $main-color;
     transition: all 0.5s ease;
 }
+
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

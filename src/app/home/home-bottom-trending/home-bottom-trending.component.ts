@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class HomeBottomTrendingComponent implements OnInit{
   starsArray: any[] = new Array(5);
-  productsArray : Post[] = []
+  productsArray !: Post[] 
 
   constructor (private apiService : ApiService){}
 

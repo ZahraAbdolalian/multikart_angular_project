@@ -8,7 +8,11 @@
       </div>
     </div>
 
-    <div class="trending_container_part2">
+    <div class="spinner" *ngIf="!productsArray">
+      <mat-spinner color="primary" value="75"></mat-spinner>
+    </div>
+
+    <div class="trending_container_part2" *ngIf="productsArray">
       <div class="trending_product_part2" *ngFor="let item of productsArray">
         <div class="trending_product_box">
           <div class="trending_img_container_part2">

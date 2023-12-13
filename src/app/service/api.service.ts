@@ -28,4 +28,8 @@ export class ApiService {
   getSomeProductFromWomenClothing(num : number){
     return this.http.get<Post[]>(`https://fakestoreapi.com/products/category/women's clothing?limit=${num}`)
   }
+
+  getProductsWithId (id : number) {
+    return this.http.get<Post>(`https://fakestoreapi.com/products/${id}`)
+  }
 }
