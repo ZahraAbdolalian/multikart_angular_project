@@ -1,0 +1,75 @@
+<div class="product_box_right">
+    <div class="product_box_right_img">
+        <img class="main_img" src="../../../assets/images/test2.jpg" alt="">
+        <div class="product_all_img">
+        </div>
+    </div>
+    <div class="product_box_right_infos">
+        <div class="product_details">
+            <h2 class="product_name">name</h2>
+            <h4 class="product_discount_price">
+                <del>discountedPrice</del>
+                <span>40% Off</span>
+            </h4>
+            <h3 class="product_price">price</h3>
+            <ul class="product_color">
+
+            </ul>
+        </div>
+        <div class="product_quantity quantity_wrapper">
+            <h5 class="stock">In Stock</h5>
+            <h6>quantity</h6>
+            <div class="quantity_box">
+                <button class="quantity_btn quantity_btn_left" type="button">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="quantity_num">1</div>
+                <button class="quantity_btn quantity_btn_right" type="button">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="quantity_link">
+                <a class="able quantity_link_btn" href="cart.html?id=${mainProductObject.id}">add to cart</a>
+                <a class="able quantity_link_btn" href="checkout.html">buy now</a>
+            </div>
+        </div>
+        <div class="product_details">
+            <h6>product details</h6>
+            <p>It is a long established fact that a reader will be distracted by the readable content of
+                a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                more-or-less normal distrib...</p>
+        </div>
+        <div class="product_media">
+            <h6>share it</h6>
+            <div>
+                <div class="media_icons">
+                    <mat-list>
+                        <mat-list-item *ngFor="let item of mediaIcons">
+                            <a [href]="item.url">
+                                <i _ngcontent-serverapp-c2628554100="" [class]="item.name"></i>
+                            </a>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+                <div class="wishlist_btn">
+                    <button>
+                        <i _ngcontent-serverapp-c3931259297="" class="fa fa-heart"></i>
+                        <span>Add To WishList</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="product_reminder">
+            <h6>Time Reminder</h6>
+            <div>
+                <p>
+                    <span class="timer_box" *ngFor="let item of timer">
+                        <span class="timer_num" [class]="item.className">{{item.amount}}</span>
+                        <span class="timer_dot" *ngIf="item.timerCal !== 'Sec'">:</span>
+                        <span class="timer_cal">{{item.timerCal}}</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

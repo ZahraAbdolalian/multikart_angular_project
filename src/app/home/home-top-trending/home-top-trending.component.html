@@ -23,7 +23,7 @@
                 <div class="trending_product_box">
                   <div class="trending_img_container">
                     <span class="trending_new"> new </span>
-                    <a href="#">
+                    <a routerLink="/product-details">
                       <div class="trending_img_box">
                         <img
                           class="trending_img"
@@ -59,7 +59,7 @@
                     <div class="stars">
                       <div class="star" *ngFor="let item of starsArray">★</div>
                     </div>
-                    <a href="">
+                    <a (click)="onLoadProductDetails()">
                       <h6 class="trending_name">{{ item.title }}</h6>
                     </a>
                     <h4 class="trending_price">${{ item.price }}</h4>

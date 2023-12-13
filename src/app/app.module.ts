@@ -27,6 +27,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CollectionFilterComponent } from './product-details/collection-filter/collection-filter.component';
 import { ProductServiceComponent } from './product-details/product-service/product-service.component';
 import { NewProductComponent } from './product-details/new-product/new-product.component';
+import { ProductInformationComponent } from './product-details/product-information/product-information.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { NewProductComponent } from './product-details/new-product/new-product.c
     ProductDetailsComponent,
     CollectionFilterComponent,
     ProductServiceComponent,
-    NewProductComponent
+    NewProductComponent,
+    ProductInformationComponent
   ],
   imports: [
     BrowserModule,
