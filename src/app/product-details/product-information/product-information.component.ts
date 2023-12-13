@@ -47,6 +47,7 @@ export class ProductInformationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.productId = this.route.snapshot.params['id']
     this.route.params.subscribe(
       (params: Params) => {
         this.productId = params['id']

@@ -29,6 +29,7 @@ import { ProductServiceComponent } from './product-details/product-service/produ
 import { NewProductComponent } from './product-details/new-product/new-product.component';
 import { ProductInformationComponent } from './product-details/product-information/product-information.component';
 import { TabProductComponent } from './product-details/tab-product/tab-product.component';
+import { RelatedProductsComponent } from './product-details/related-products/related-products.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { TabProductComponent } from './product-details/tab-product/tab-product.c
     ProductServiceComponent,
     NewProductComponent,
     ProductInformationComponent,
-    TabProductComponent
+    TabProductComponent,
+    RelatedProductsComponent
   ],
   imports: [
     BrowserModule,
