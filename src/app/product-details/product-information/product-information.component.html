@@ -21,20 +21,20 @@
             </ul>
         </div>
         <div class="product_quantity quantity_wrapper">
-            <h5 class="stock">In Stock</h5>
+            <h5 class="stock">{{stock}}</h5>
             <h6>quantity</h6>
             <div class="quantity_box">
-                <button class="quantity_btn quantity_btn_left" type="button">
+                <button class="quantity_btn quantity_btn_left" type="button" (click)="reduceQuantity(quantity)">
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </button>
-                <div class="quantity_num">1</div>
-                <button class="quantity_btn quantity_btn_right" type="button">
+                <input type="number" disabled value="1" class="quantity_num" #quantity>
+                <button class="quantity_btn quantity_btn_right" type="button" (click)="increaseQuantity(quantity)">
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </button>
             </div>
             <div class="quantity_link">
-                <a class="able quantity_link_btn" href="cart.html?id=${mainProductObject.id}">add to cart</a>
-                <a class="able quantity_link_btn" href="checkout.html">buy now</a>
+                <a class="quantity_link_btn" [class]="stock === 'Out of Stock' ? 'disable' : 'able'" href="cart.html?id=${mainProductObject.id}">add to cart</a>
+                <a class="quantity_link_btn" [class]="stock === 'Out of Stock' ? 'disable' : 'able'" href="checkout.html">buy now</a>
             </div>
         </div>
         <div class="product_details">

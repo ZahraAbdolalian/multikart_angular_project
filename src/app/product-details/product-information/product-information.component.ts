@@ -36,8 +36,8 @@ export class ProductInformationComponent implements OnInit {
     { className: 'second', amount: -8, timerCal: 'Sec' },
   ]
 
-  product !: Post 
-
+  product !: Post
+  stock = 'In Stock'
   productId = 0
   priceBeforeDiscount = 0
 
@@ -48,7 +48,7 @@ export class ProductInformationComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(
-      (params : Params) => {
+      (params: Params) => {
         this.productId = params['id']
       }
     )
@@ -58,7 +58,27 @@ export class ProductInformationComponent implements OnInit {
         this.product = data
         this.priceBeforeDiscount = (this.product.price * 100) / 40
       })
-    
-    
+  }
+
+  reduceQuantity(quantityElem: HTMLInputElement) {
+    let quantity = +quantityElem.value
+    if (quantity > 1) {
+      quantity--
+      if (quantity <= 15){
+        this.stock = 'In Stock'
+      }
+    }
+    quantityElem.value = quantity.toString()
+  }
+
+  increaseQuantity(quantityElem: HTMLInputElement) {
+    let quantity = +quantityElem.value
+    quantity++
+    if (quantity < 15) {
+      this.stock = 'In Stock'
+    }else {
+      this.stock = 'Out of Stock'
+    }
+    quantityElem.value = quantity.toString()
   }
 }
