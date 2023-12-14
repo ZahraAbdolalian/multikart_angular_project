@@ -24,7 +24,7 @@ import { TopFooterComponent } from './footer/top-footer/top-footer.component';
 import { BottomFooterComponent } from './footer/bottom-footer/bottom-footer.component';
 import { SubFooterComponent } from './footer/sub-footer/sub-footer.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { CollectionFilterComponent } from './product-details/collection-filter/collection-filter.component';
+import { CollectionFilterComponent } from './shared-component/collection-filter/collection-filter.component';
 import { ProductServiceComponent } from './product-details/product-service/product-service.component';
 import { NewProductComponent } from './product-details/new-product/new-product.component';
 import { ProductInformationComponent } from './product-details/product-information/product-information.component';
@@ -32,6 +32,9 @@ import { TabProductComponent } from './product-details/tab-product/tab-product.c
 import { RelatedProductsComponent } from './product-details/related-products/related-products.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
+import { CollectionComponent } from './collection/collection.component';
+import { TitleComponent } from './shared-component/title/title.component';
+import { CategoryFiltersComponent } from './collection/category-filters/category-filters.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,10 @@ import { HeaderComponent } from './header/header.component';
     ProductInformationComponent,
     TabProductComponent,
     RelatedProductsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CollectionComponent,
+    TitleComponent,
+    CategoryFiltersComponent
   ],
   imports: [
     BrowserModule,

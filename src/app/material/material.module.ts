@@ -12,6 +12,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 
@@ -27,7 +28,8 @@ const MaterialComponents = [
   MatTabsModule,
   MatProgressSpinnerModule,
   MatInputModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatSliderModule
 ]
 
 @NgModule({

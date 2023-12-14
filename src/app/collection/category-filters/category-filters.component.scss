@@ -1,0 +1,123 @@
+$main-color : #ff4c3b;
+$border-color : #dddddd;
+
+a{
+    text-decoration: none;
+}
+
+.collection_left_center {
+    background-color: #ffffff;
+    border: 1px solid $border-color;
+    padding: 0px 30px;
+    margin-bottom: 30px;
+}
+
+.filter_title {
+    color: #444444;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+    letter-spacing: 0.42px;
+
+    &::after {
+        content: "\f0d7";
+        font-family: FontAwesome;
+        color: #444444;
+        position: absolute;
+        right: -3px;
+        top: 0;
+    }
+}
+
+.brand_name,
+.color_box,
+.price_box {
+    max-height: 0;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.colors_filter .open{
+    margin-bottom: 24px;
+    margin-top: 30px;
+    overflow-y: auto;
+}
+
+.brand_filter .open,
+.colors_filter .open,
+.price_filter .open{
+    max-height: 170px;
+    overflow-x: hidden;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.brand_filter .open,
+.colors_filter .open, 
+.price_filter .open {
+    margin-top: 30px;
+}
+
+.open::-webkit-scrollbar {
+    background-color: #F5F5F5;
+    width: 5px;
+}
+
+.open::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top,
+            color-stop(0.62, $main-color),
+            color-stop(0.86, $main-color));
+}
+
+.brand,
+.colors{
+    padding-bottom: 24px;
+}
+
+.collection_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 11px;
+    cursor: pointer;
+
+    label {
+        color: #777777;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-left: 15px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+    }
+
+    input{
+        cursor: pointer;
+    }
+}
+
+.color_item{
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    border: 1px solid #eee;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: 10px;
+}
+
+.color_item + label{
+    margin-left: 8px;
+}
+
+mat-slider {
+    width: 80%;
+    margin-left: 25px;
+}

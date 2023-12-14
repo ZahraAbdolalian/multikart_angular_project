@@ -1,13 +1,9 @@
-a {
-    text-decoration: none;
-}
-
-.product_detail_container {
+.collection_container {
     padding-top: 70px;
     padding-bottom: 70px;
 }
 
-.product_box {
+.collection_box {
     max-width: 1400px;
     margin: 0 auto;
     padding-left: 12px;
@@ -15,12 +11,7 @@ a {
     display: flex;
 }
 
-
-.product_box_left {
+.collection_box_left {
     width: 25%;
     padding-right: 12px;
-}
-
-.product_box_right_container{
-    width: 75%;
 }
