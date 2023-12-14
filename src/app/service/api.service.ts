@@ -9,6 +9,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  getAllProducts (){
+    return this.http.get<Post[]>('https://fakestoreapi.com/products')
+  }
+
   getSomeProducts(num: number) {
     return this.http.get<Post[]>(`https://fakestoreapi.com/products?limit=${num}`)
   }
