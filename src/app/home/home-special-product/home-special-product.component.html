@@ -14,7 +14,7 @@
     <div class="special_container" *ngIf="productsArray">
         <div class="special_box">
             <div class="special_item" *ngFor="let item of productsArray.slice(0,2)">
-                <a href="#">
+                <a [routerLink]="['/product-details',item.id]">
                     <img class="special_image" [src]="item.image" alt="special_image">
                 </a>
 
@@ -22,7 +22,7 @@
                     <div class="stars">
                         <div class="star" *ngFor="let item of starsArray">★</div>
                     </div>
-                    <a href="">
+                    <a [routerLink]="['/product-details',item.id]">
                         <h6 class="special_name">{{item.title}}</h6>
                     </a>
                     <h4 class="special_price"> {{item.price}}
@@ -41,7 +41,7 @@
                         <span class="special_on_sale">
                             on sale
                         </span>
-                        <a href="#">
+                        <a [routerLink]="['/product-details',item.id]">
                             <img class="special_img" [src]="item.image" alt="special_img">
                         </a>
                         <div class="special_icons">
@@ -66,7 +66,7 @@
                         <div class="stars stars_part2">
                             <div class="star" *ngFor="let item of starsArray">★</div>
                         </div>
-                        <a href="">
+                        <a [routerLink]="['/product-details',item.id]">
                             <h6 class="special_name">{{item.title}}</h6>
                         </a>
                         <h4 class="special_price"> ${{item.price}}
@@ -78,7 +78,7 @@
 
         <div class="special_box">
             <div class="special_item"*ngFor="let item of productsArray.slice(3,5)">
-                <a href="">
+                <a [routerLink]="['/product-details',item.id]">
                     <img class="special_image" [src]="item.image" alt="special_image">
                 </a>
 
@@ -86,7 +86,7 @@
                     <div class="stars stars_part2">
                         <div class="star" *ngFor="let item of starsArray">★</div>
                     </div>
-                    <a href="">
+                    <a [routerLink]="['/product-details',item.id]">
                         <h6 class="special_name">{{item.title}}</h6>
                     </a>
                     <h4 class="special_price"> ${{item.price}}

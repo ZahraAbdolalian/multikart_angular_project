@@ -1,6 +1,11 @@
 $main-color : #ff4c3b;
 $border-color : #dddddd;
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 a {
     text-decoration: none;
 }
@@ -157,8 +162,7 @@ a {
 .related_product_name {
     color: #777777;
     font-size: 16px;
-    margin-bottom: 3px;
-    padding-bottom: 1px;
+    margin-top: 7px;
     font-weight: 400;
     line-height: 1;
     overflow: hidden;
@@ -174,6 +178,7 @@ a {
     font-weight: 700;
     letter-spacing: 0.54px;
     line-height: 1;
+    margin-top: 7px;
 }
 
 .related_product_price {

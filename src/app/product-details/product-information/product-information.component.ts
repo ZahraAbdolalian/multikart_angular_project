@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Post } from 'src/app/post.model';
 import { ApiService } from 'src/app/service/api.service';
@@ -9,6 +9,8 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./product-information.component.scss']
 })
 export class ProductInformationComponent implements OnInit {
+
+  @Output() productName = new EventEmitter<string>();
 
   mediaIcons = [
     {
@@ -37,6 +39,7 @@ export class ProductInformationComponent implements OnInit {
   ]
 
   product !: Post
+  isLoading = true
   stock = 'In Stock'
   productId = 0
   priceBeforeDiscount = 0
@@ -47,18 +50,24 @@ export class ProductInformationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.productId = this.route.snapshot.params['id']
+
     this.route.params.subscribe(
       (params: Params) => {
+
         this.productId = params['id']
+        this.isLoading = true
+
+        this.apiService.getProductsWithId(this.productId)
+        .subscribe(data => {
+          this.product = data
+          this.productName.emit(this.product.title)
+          this.priceBeforeDiscount = (this.product.price * 100) / 40
+          this.isLoading = false
+        })
       }
     )
 
-    this.apiService.getProductsWithId(this.productId)
-      .subscribe(data => {
-        this.product = data
-        this.priceBeforeDiscount = (this.product.price * 100) / 40
-      })
+    
   }
 
   reduceQuantity(quantityElem: HTMLInputElement) {

@@ -30,6 +30,7 @@ import { NewProductComponent } from './product-details/new-product/new-product.c
 import { ProductInformationComponent } from './product-details/product-information/product-information.component';
 import { TabProductComponent } from './product-details/tab-product/tab-product.component';
 import { RelatedProductsComponent } from './product-details/related-products/related-products.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { RelatedProductsComponent } from './product-details/related-products/rel
     NewProductComponent,
     ProductInformationComponent,
     TabProductComponent,
-    RelatedProductsComponent
+    RelatedProductsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
