@@ -108,6 +108,135 @@ export class BottomHeaderComponent {
     },
   ]
 
+  featuresItem = [
+    {
+      name: 'portfolio',
+      options: [
+        {
+          title: 'portfolio grid 2',
+          link: '#'
+        },
+        {
+          title: 'portfolio grid 3',
+          link: '#'
+        },
+        {
+          title: 'portfolio grid 4',
+          link: '#'
+        },
+        {
+          title: 'masonry-grid-2',
+          link: '#'
+        },
+        {
+          title: 'masonry-grid-3',
+          link: '#'
+        },
+        {
+          title: 'masonry-grid-4',
+          link: '#'
+        },
+        {
+          title: 'masonry-Full-Width',
+          link: '#'
+        }
+      ]
+    },
+    {
+      name: 'add to cart',
+      options: [
+        {
+          title: 'Cart Right',
+          link: '#'
+        },
+        {
+          title: 'Cart Left',
+          link: '#'
+        },
+        {
+          title: 'Cart Top',
+          link: '#'
+        },
+        {
+          title: 'Cart Bottom',
+          link: '#'
+        },
+        {
+          title: 'Cart-Model-Popup',
+          link: '#'
+        }
+      ]
+    },
+    {
+      name: 'Theme Elements',
+      options: [
+        {
+          title: 'Title',
+          link: '#'
+        },
+        {
+          title: 'Collection Banner',
+          link: '#'
+        },
+        {
+          title: 'Home Slider',
+          link: '#'
+        },
+        {
+          title: 'Category',
+          link: '#'
+        },
+        {
+          title: 'Services',
+          link: '#'
+        }
+      ]
+    },
+    {
+      name: 'Product Elements',
+      options: [
+        {
+          title: 'Product Slider',
+          link: '#'
+        },
+        {
+          title: 'Banners',
+          link: '#'
+        },
+        {
+          title: 'Product Tabs',
+          link: '#'
+        },
+        {
+          title: 'Multi Slider',
+          link: '#'
+        }
+      ]
+    },
+    {
+      name: 'Email Template',
+      options: [
+        {
+          title: 'Order Success',
+          link: '#'
+        },
+        {
+          title: 'Order Success 2',
+          link: '#'
+        },
+        {
+          title: 'Email Template',
+          link: '#'
+        },
+        {
+          title: 'Email Template 2',
+          link: '#'
+        }
+      ]
+    },
+
+  ]
+
   pagesItem = [
     {
       name: 'Account',

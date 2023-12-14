@@ -31,10 +31,12 @@ import { ProductInformationComponent } from './product-details/product-informati
 import { TabProductComponent } from './product-details/tab-product/tab-product.component';
 import { RelatedProductsComponent } from './product-details/related-products/related-products.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     TopHeaderComponent,
     BottomHeaderComponent,
     HomeComponent,

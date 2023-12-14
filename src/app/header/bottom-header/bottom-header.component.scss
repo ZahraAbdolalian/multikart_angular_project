@@ -98,13 +98,27 @@ mat-toolbar {
 .header_submenu {
     opacity: 0;
     visibility: hidden;
-    text-transform: none;
+    text-transform: capitalize;
     box-shadow: 0 0 1px #ebebeb;
     padding: 15px 0;
     position: absolute;
     top: 40px;
     width: 200px;
     background-color: #fff;
+}
+
+.features{
+    display: flex;
+    right: 800px;
+    top: 25px;
+    background-color: unset;
+    box-shadow: none;
+
+    h3{
+        padding: 5px 35px;
+        font-weight: 700;
+        font-size: 14px;
+    }
 }
 
 
@@ -115,6 +129,18 @@ mat-toolbar {
     left: auto;
     right: 15px;
     text-align: center;
+}
+
+.header_submenu_container {
+    background-color: #fff;
+    box-shadow: 0 0 1px #ebebeb;
+    height: 330px;
+    padding-left: 30px;
+    padding-top: 30px;
+
+    &:last-child {
+        padding-right: 30px;
+    }
 }
 
 .header_submenu_item {
@@ -230,7 +256,7 @@ mat-toolbar {
 .bottom_header_icon_box {
     position: relative;
 
-    &:hover .bottom_header_icon_hover{
+    &:hover .bottom_header_icon_hover {
         opacity: 1;
         visibility: visible;
         transform: translateY(0px);
@@ -256,6 +282,7 @@ mat-toolbar {
 
     mat-list-item {
         height: 28px !important;
+
         a {
             color: #333333;
             font-size: 16px;
@@ -264,7 +291,7 @@ mat-toolbar {
         }
     }
 
-    h4{
+    h4 {
         color: #333333;
         font-weight: 700;
         padding-bottom: 5px;
