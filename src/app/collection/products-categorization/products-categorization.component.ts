@@ -1,6 +1,8 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Post } from 'src/app/post.model';
 import { ApiService } from 'src/app/service/api.service';
 
@@ -11,20 +13,39 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class ProductsCategorizationComponent implements OnInit {
 
-  numOfStars = 5
-  starsArray: any[] = new Array(this.numOfStars);
-  
+  starsArray: any[] = new Array(5);
+  productCategory = ''
+
   displayedColumns: string[] = ['image', 'title', 'price', 'rating'];
   dataSource = new MatTableDataSource<Post>();
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort !: MatSort;
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
-    this.apiService.getAllProducts().subscribe((data) => {
-      this.dataSource.data = data;
-      this.dataSource.paginator = this.paginator;
-    });
+
+    this.route.params.subscribe(
+      (params: Params) => {
+
+        this.productCategory = params['category']
+        console.log(this.productCategory);
+        
+
+        this.apiService.getProductsInCategory(this.productCategory).subscribe((data) => {
+          console.log(data);
+          
+          this.dataSource.data = data;
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+        });
+      }
+    )
+
+
   }
 }

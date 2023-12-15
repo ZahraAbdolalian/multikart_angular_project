@@ -29,4 +29,5 @@ export class CategoryFiltersComponent {
   togglePriceList() {
     this.isPriceListOpen = !this.isPriceListOpen
   }
+
 }

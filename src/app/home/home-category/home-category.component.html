@@ -11,7 +11,7 @@
                 {{item.description}}
             </mat-card-content>
             <mat-card-actions>
-                <a class="category_link" href="collection.html">view more</a>
+                <a class="category_link" [routerLink]="['/collection',item.category]">view more</a>
             </mat-card-actions>
         </mat-card>
     </div>

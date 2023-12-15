@@ -17,6 +17,10 @@ export class ApiService {
     return this.http.get<Post[]>(`https://fakestoreapi.com/products?limit=${num}`)
   }
 
+  getProductsInCategory(category:string){
+    return this.http.get<Post[]>(`https://fakestoreapi.com/products/category/${category}`)
+  }
+
   getSomeProductFromElectronics(num : number) {
     return this.http.get<Post[]>(`https://fakestoreapi.com/products/category/electronics?limit=${num}`)
   }

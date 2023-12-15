@@ -37,6 +37,7 @@ import { CategoryFiltersComponent } from './collection/category-filters/category
 import { NewProductComponent } from './shared-component/new-product/new-product.component';
 import { CollectionBannerComponent } from './collection/collection-banner/collection-banner.component';
 import { ProductsCategorizationComponent } from './collection/products-categorization/products-categorization.component';
+import { SidenavComponent } from './header/bottom-header/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { ProductsCategorizationComponent } from './collection/products-categoriz
     TitleComponent,
     CategoryFiltersComponent,
     CollectionBannerComponent,
-    ProductsCategorizationComponent
+    ProductsCategorizationComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

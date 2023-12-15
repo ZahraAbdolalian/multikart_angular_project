@@ -8,12 +8,12 @@
         <div class="new_product_box">
             <div class="new_product_content" *ngFor="let item of selectedProducts">
                 <div class="new_product_img_box">
-                    <a href="#">
+                    <a [routerLink]="['/product-details',item.id]">
                         <img class="new_product_img" [src]="item.image" alt="new product" />
                     </a>
                 </div>
                 <div>
-                    <a href="" class="new_product_name">{{item.title}}</a>
+                    <a [routerLink]="['/product-details',item.id]" class="new_product_name">{{item.title}}</a>
                     <h4 class="new_product_price">
                         ${{item.price}}
                     </h4>

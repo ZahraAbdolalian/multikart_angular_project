@@ -42,6 +42,13 @@ a{
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
+.price_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 105px;
+}
+
 .colors_filter .open{
     margin-bottom: 24px;
     margin-top: 30px;
@@ -119,5 +126,5 @@ a{
 
 mat-slider {
     width: 80%;
-    margin-left: 25px;
+    margin-left: 8px;
 }

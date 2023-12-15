@@ -8,10 +8,7 @@ import { MatList } from '@angular/material/list';
 })
 export class CollectionFilterComponent {
   categoryArray = [
-    'fashion', 'shoes', 'bags', 'watch',
-    'flower', 'pets', 'electronics',
-    'vegetables', 'furniture', 'beauty', 
-    'tools', 'gym', 'marijuana'
+    'electronics', 'jewelery', "men's clothing", "women's clothing"
   ]
 
   isCategoryListOpen = true;
