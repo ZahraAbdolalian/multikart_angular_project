@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getAllProducts (){
+  getAllProducts() {
     return this.http.get<Post[]>('https://fakestoreapi.com/products')
   }
 
@@ -17,27 +17,19 @@ export class ApiService {
     return this.http.get<Post[]>(`https://fakestoreapi.com/products?limit=${num}`)
   }
 
-  getProductsInCategory(category:string){
+  getAllProductsInCategory(category: string) {
     return this.http.get<Post[]>(`https://fakestoreapi.com/products/category/${category}`)
   }
 
-  getSomeProductFromElectronics(num : number) {
-    return this.http.get<Post[]>(`https://fakestoreapi.com/products/category/electronics?limit=${num}`)
+  getCategoriesName(){
+    return this.http.get<string[]>('https://fakestoreapi.com/products/categories')
   }
 
-  getSomeProductFromJewelery(num : number) {
-    return this.http.get<Post[]>(`https://fakestoreapi.com/products/category/jewelery?limit=${num}`)
+  getSomeProductInCategory(num: number, categoryName: string) {
+    return this.http.get<Post[]>(`https://fakestoreapi.com/products/category/${categoryName}?limit=${num}`)
   }
 
-  getSomeProductFromMenClothing(num : number) {
-    return this.http.get<Post[]>(`https://fakestoreapi.com/products/category/men's clothing?limit=${num}`)
-  }
-
-  getSomeProductFromWomenClothing(num : number){
-    return this.http.get<Post[]>(`https://fakestoreapi.com/products/category/women's clothing?limit=${num}`)
-  }
-
-  getProductsWithId (id : number) {
+  getProductsWithId(id: number) {
     return this.http.get<Post>(`https://fakestoreapi.com/products/${id}`)
   }
 }

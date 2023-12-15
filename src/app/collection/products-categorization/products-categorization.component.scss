@@ -1,13 +1,14 @@
-$main-color : #ff4c3b;
+@import '../../shared/shared-style/shared-style';
 
 td {
   font-size: 16px;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid $border-color;
 }
 
 .product_title {
   max-width: 250px;
   text-wrap: pretty;
+  color: $main-text-color;
 }
 
 .product_img_box {
@@ -39,14 +40,13 @@ td {
 
 .product_icons_link {
   transition: 0.5s ease;
-  text-decoration: none;
   position: relative;
 }
 
 .shopping {
   padding: 10px;
   display: block;
-  color: #6f6f6f;
+  color: $icon-color;
   font-size: 18px;
   transition: all 0.5s ease;
   position: relative;
@@ -91,7 +91,7 @@ td {
   font-size: 13px;
   font-weight: 700;
   background-color: $main-color;
-  color: #fff;
+  color: $white-color;
   border-radius: 100%;
   padding: 11px 4px;
   position: absolute;

@@ -1,19 +1,14 @@
-$main-color : #ff4c3b;
-$border-color : #dddddd;
-
-a{
-    text-decoration: none;
-}
+@import '../../shared/shared-style/shared-style';
 
 .collection_left_center {
-    background-color: #ffffff;
+    background-color: $white-color;
     border: 1px solid $border-color;
     padding: 0px 30px;
     margin-bottom: 30px;
 }
 
 .filter_title {
-    color: #444444;
+    color: $main-text-color;
     font-weight: 600;
     font-size: 16px;
     text-transform: uppercase;
@@ -25,7 +20,7 @@ a{
     &::after {
         content: "\f0d7";
         font-family: FontAwesome;
-        color: #444444;
+        color: $main-text-color;
         position: absolute;
         right: -3px;
         top: 0;
@@ -58,7 +53,7 @@ a{
 .brand_filter .open,
 .colors_filter .open,
 .price_filter .open{
-    max-height: 170px;
+    max-height: 158px;
     overflow-x: hidden;
     transition-property: all;
     transition-duration: 0.5s;
@@ -84,7 +79,8 @@ a{
 }
 
 .brand,
-.colors{
+.colors,
+.price{
     padding-bottom: 24px;
 }
 
@@ -95,7 +91,7 @@ a{
     cursor: pointer;
 
     label {
-        color: #777777;
+        color: $light-text-color;
         font-size: 12px;
         font-weight: 600;
         text-transform: uppercase;
@@ -113,7 +109,7 @@ a{
     width: 14px;
     height: 14px;
     border-radius: 100%;
-    border: 1px solid #eee;
+    border: 1px solid $border-color;
     position: relative;
     top: 0;
     left: 0;

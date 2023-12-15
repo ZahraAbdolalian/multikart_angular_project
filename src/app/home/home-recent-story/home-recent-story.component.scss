@@ -1,8 +1,4 @@
-$main-color : #ff4c3b;
-
-a{
-    text-decoration: none;
-}
+@import '../../shared/shared-style/shared-style';
 
 .recent_story {
     padding-top: 70px;
@@ -13,7 +9,7 @@ a{
 .title_h2 {
     text-align: center;
     font-size: 36px;
-    color: #222222;
+    color: $main-text-color;
     text-transform: uppercase;
     position: relative;
     font-weight: 700;
@@ -67,7 +63,6 @@ a{
     padding-left: 12px;
     padding-right: 12px;
     margin: 0 auto;
-
 }
 
 .recent_story_box {
@@ -79,7 +74,6 @@ a{
     padding-right: 12px;
     width: 458.667px;
 }
-
 
 .recent_img {
     width: 100%;
@@ -106,7 +100,7 @@ a{
 .recent_text {
     font-weight: 700;
     text-transform: uppercase;
-    color: #222222;
+    color: $main-text-color;
     line-height: 1.5;
     margin-top: 10px;
     transition: all 0.5s ease;
@@ -127,7 +121,7 @@ a{
 }
 
 .recent_author {
-    color: #777777;
+    color: $light-text-color;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 1.4px;
@@ -168,8 +162,6 @@ a{
     z-index: 1;
     background-color: $main-color;
 }
-
-
 
 .recent_img_box::before {
     transition-delay: 0s;

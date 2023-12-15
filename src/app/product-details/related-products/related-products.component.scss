@@ -1,14 +1,4 @@
-$main-color : #ff4c3b;
-$border-color : #dddddd;
-
-*{
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-}
+@import '../../shared/shared-style/shared-style';
 
 .related_products_container {
     max-width: 1400px;
@@ -22,7 +12,7 @@ a {
 
 .related_product_title h2 {
     font-size: 36px;
-    color: #222222;
+    color: $main-text-color;
     border-bottom: 1px solid $border-color;
     line-height: 0.8;
     text-transform: uppercase;
@@ -48,7 +38,7 @@ a {
     font-size: 13px;
     font-weight: 700;
     background-color: $main-color;
-    color: #fff;
+    color: $white-color;
     border-radius: 100%;
     padding: 11px 4px;
     position: absolute;
@@ -77,7 +67,7 @@ a {
 }
 
 .related_product_img_container {
-    background-color: #fff;
+    background-color: $white-color;
     width: 100%;
 }
 
@@ -100,14 +90,13 @@ a {
 
 .related_product_icons_link {
     transition: 0.5s ease;
-    text-decoration: none;
     position: relative;
 }
 
 .shopping {
     padding: 10px;
     display: block;
-    color: #6f6f6f;
+    color: $icon-color;
     font-size: 18px;
     transition: all 0.5s ease;
     position: relative;
@@ -160,7 +149,7 @@ a {
 }
 
 .related_product_name {
-    color: #777777;
+    color: $light-text-color;
     font-size: 16px;
     margin-top: 7px;
     font-weight: 400;
@@ -173,7 +162,7 @@ a {
 }
 
 .related_product_discounted_price {
-    color: #222222;
+    color: $main-text-color;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.54px;

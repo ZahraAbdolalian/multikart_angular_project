@@ -1,5 +1,8 @@
-$main-color : #ff4c3b;
-$border-color : #dddddd;
+@import '../../shared/shared-style/shared-style';
+
+.product_right_bottom_container{
+    padding-top: 10px;
+}
 
 .product_right_bottom {
     padding-top: 105px;
@@ -8,7 +11,7 @@ $border-color : #dddddd;
 
 .description {
     font-size: 14px;
-    color: #777777;
+    color: $light-text-color;
     line-height: 24px;
     letter-spacing: 0.14px;
 }
@@ -42,7 +45,7 @@ $border-color : #dddddd;
 
     input,
     textarea {
-        border: 1px solid #dee2e6;
+        border: 1px solid $border-color;
         padding: 15px 25px;
         outline: none;
         width: 100%;
@@ -83,7 +86,7 @@ $border-color : #dddddd;
     font-family: 'Lato', sans-serif;
     padding: 13px 29px;
     background-image: linear-gradient(30deg, $main-color 50%, transparent 50%);
-    color: #ffffff;
+    color: $white-color;
     text-transform: uppercase;
     border: 2px solid $main-color;
     background-size: 850px;
@@ -98,9 +101,8 @@ $border-color : #dddddd;
 
     &:hover {
         background-position: 100%;
-        color: #000000;
-        background-color: #ffffff;
+        color: $main-text-color;
+        background-color: $white-color;
         transition: 0.3s ease-in-out;
     }
-
 }

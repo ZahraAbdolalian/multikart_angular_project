@@ -1,8 +1,4 @@
-$main-color : #ff4c3b;
-
-a {
-    text-decoration: none;
-}
+@import '../../shared/shared-style/shared-style';
 
 .category {
     min-width: 1400px;
@@ -13,7 +9,6 @@ a {
     justify-content: space-evenly;
 }
 
-
 .category_product_box {
     width: 304px;
     margin: 0 auto;
@@ -22,7 +17,7 @@ a {
 
 .category_product {
     padding: 40px 0;
-    border: 1px solid #dddada;
+    border: 1px solid $border-color;
     box-shadow: none;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -79,7 +74,7 @@ mat-card-actions {
     display: inline-block;
     text-transform: uppercase;
     font-weight: 700;
-    color: #000000;
+    color: $main-text-color;
     padding: 13px 29px;
     margin-top: 20px;
     letter-spacing: 0.7px;
@@ -109,25 +104,8 @@ mat-card-actions {
     }
 
     &:hover {
-        color: #fff;
+        color: $white-color;
         background-color: $main-color;
         transition: 0.3s ease-in-out;
     }
-}
-
-.category_product_box {
-    $_g: #0000 25%, var($main-color) 0;
-    $_i: 100%;
-    background: conic-gradient(from 180deg at top 1px right 1px, var($_g)) var($_i, 200%) 0 /200% var($_i, 1px) no-repeat,
-        conic-gradient(at bottom 1px left 1px, var($_g)) 0 var($_i, 200%)/var($_i, 1px) 200% no-repeat;
-    transition: 0.3s, background-position 0.3s 0.3s;
-    -webkit-transition: 0.3s, background-position 0.3s 0.3s;
-    -moz-transition: 0.3s, background-position 0.3s 0.3s;
-    -ms-transition: 0.3s, background-position 0.3s 0.3s;
-    -o-transition: 0.3s, background-position 0.3s 0.3s;
-}
-
-.category_product_box:hover {
-    $_i: 100%;
-    transition: 0.3s, background-size 0.3s 0.3s;
 }

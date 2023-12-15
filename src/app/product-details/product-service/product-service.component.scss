@@ -1,7 +1,7 @@
-$border-color : #dddddd;
+@import '../../shared/shared-style/shared-style';
 
 .product_left_center {
-    background-color: #ffffff;
+    background-color: $white-color;
     border: 1px solid $border-color;
     padding: 0px 30px;
     margin-bottom: 30px;
@@ -40,7 +40,7 @@ $border-color : #dddddd;
     }
 
     p{
-        color: #777777;
+        color: $light-text-color;
         font-size: 14px;
         text-transform: capitalize;
         line-height: 24px;

@@ -10,27 +10,21 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class HomeCategoryComponent implements OnInit {
   categoryList: Post[] = []
+  categoryNameList: string[] = []
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getSomeProductFromElectronics(1)
+    this.apiService.getCategoriesName()
       .subscribe(data => {
-        this.categoryList = [...this.categoryList, ...data]
+        this.categoryNameList = data
+
+        for (let index = 0; index < this.categoryNameList.length; index++) {
+          this.apiService.getSomeProductInCategory(1, this.categoryNameList[index])
+            .subscribe(data => {
+              this.categoryList = [...this.categoryList, ...data]
+            })
+        }
       })
-    this.apiService.getSomeProductFromJewelery(1)
-      .subscribe(data => {
-        this.categoryList = [...this.categoryList, ...data]
-      })
-    this.apiService.getSomeProductFromMenClothing(1)
-    .subscribe(data => {
-      this.categoryList = [...this.categoryList, ...data]
-    })
-    this.apiService.getSomeProductFromWomenClothing(1)
-    .subscribe(data => {
-      this.categoryList = [...this.categoryList, ...data]
-    })
   }
-
-
 }

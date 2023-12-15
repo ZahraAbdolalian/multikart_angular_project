@@ -31,21 +31,14 @@ export class ProductsCategorizationComponent implements OnInit {
 
     this.route.params.subscribe(
       (params: Params) => {
-
         this.productCategory = params['category']
-        console.log(this.productCategory);
-        
 
-        this.apiService.getProductsInCategory(this.productCategory).subscribe((data) => {
-          console.log(data);
-          
+        this.apiService.getAllProductsInCategory(this.productCategory).subscribe((data) => {
           this.dataSource.data = data;
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
         });
       }
     )
-
-
   }
 }

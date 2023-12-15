@@ -1,9 +1,9 @@
-$main-color : #ff4c3b;
+@import '../../shared/shared-style/shared-style';
 
 .offer {
     max-width: 1400px;
     padding: 0 12px;
-    margin: 0 28px;
+    margin: 0 auto;
     padding-top: 70px;
 }
 
@@ -21,7 +21,7 @@ $main-color : #ff4c3b;
 .offer_title {
     padding: 45px 0;
     text-align: center;
-    color: #222222;
+    color: $main-text-color;
     font-size: 36px;
     text-transform: uppercase;
     letter-spacing: 0.72px;
@@ -61,12 +61,12 @@ $main-color : #ff4c3b;
 }
 
 .offer_time {
-    color: #fff;
+    color: $white-color;
     font-size: 18px;
 }
 
 .offer_call {
-    color: #777777;
+    color: $light-text-color;
     display: inline-block;
     line-height: 24px;
     width: 70px;

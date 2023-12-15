@@ -1,8 +1,4 @@
-$main-color : #ff4c3b;
-
-a {
-    text-decoration: none;
-}
+@import '../../shared/shared-style/shared-style';
 
 .footer_bottom {
     max-width: 1400px;
@@ -27,7 +23,7 @@ a {
 }
 
 .footer_bottom_text {
-    color: #777777;
+    color: $light-text-color;
     font-size: 14px;
     letter-spacing: 0.42px;
     line-height: 32px;
@@ -83,7 +79,7 @@ mat-list-item {
 }
 
 .footer_bottom_center_h4 {
-    color: #222222;
+    color: $main-text-color;
 }
 
 .footer_bottom_center_item {
@@ -91,12 +87,12 @@ mat-list-item {
     font-size: 14px;
     line-height: 21px;
     text-transform: capitalize;
-    color: #777777;
+    color: $light-text-color;
     line-height: 28px;
 }
 
 .footer_bottom_center_link {
-    color: #777777 !important;
+    color: $light-text-color !important;
     padding: 0;
     position: relative;
 
@@ -117,7 +113,7 @@ mat-list-item {
 } 
 
 .footer_bootom_item_left {
-    color: #777777;
+    color: $light-text-color;
     padding-left: 25px;
     padding-top: 5px;
     position: relative;

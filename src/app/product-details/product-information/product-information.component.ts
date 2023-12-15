@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/service/api.service';
 export class ProductInformationComponent implements OnInit {
 
   @Output() productName = new EventEmitter<string>();
+  @Output() productCategory = new EventEmitter<string>();
 
   mediaIcons = [
     {
@@ -61,13 +62,12 @@ export class ProductInformationComponent implements OnInit {
         .subscribe(data => {
           this.product = data
           this.productName.emit(this.product.title)
+          this.productCategory.emit(this.product.category)
           this.priceBeforeDiscount = (this.product.price * 100) / 40
           this.isLoading = false
         })
       }
-    )
-
-    
+    ) 
   }
 
   reduceQuantity(quantityElem: HTMLInputElement) {

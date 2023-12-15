@@ -1,6 +1,4 @@
-$main-color : #ff4c3b;
-$border-color : #dddddd;
-
+@import '../../shared/shared-style/shared-style';
 
 .service {
     max-width: 1400px;
@@ -68,7 +66,7 @@ $border-color : #dddddd;
 
 .service_text {
     font-size: 14px;
-    color: #777777;
+    color: $light-text-color;
     letter-spacing: 0.42px;
     line-height: 24px;
 }
