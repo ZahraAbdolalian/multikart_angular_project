@@ -16,7 +16,8 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatTableModule} from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import {MatSidenavModule} from '@angular/material/sidenav';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 
 const MaterialComponents = [
@@ -35,7 +36,9 @@ const MaterialComponents = [
   MatSliderModule,
   MatTableModule,
   MatSortModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatFormFieldModule,
+  MatSelectModule
 ]
 
 @NgModule({

@@ -1,0 +1,38 @@
+<app-title [titleOfPage]="'checkout'" [lacationOfPage]="'checkout'"></app-title>
+
+<section class="billing_details">
+    <div class="billing_container">
+        <div class="billing_title">
+            <h3>Billing Details</h3>
+        </div>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="billing_form">
+            <span *ngFor="let item of formFields; let i = index" >
+                <mat-form-field 
+                color="accent" 
+                *ngIf="item != 'Country'; else countrySelector"
+                [ngClass]="{'half-width': i < 4, 'full-width': i >= 4}"
+                >
+                    <mat-label>{{item}}</mat-label>
+                    <input matInput [formControlName]="item" required>
+                    <mat-error *ngIf="signUpForm.get(item)?.invalid">
+                        {{getErrorMessage(item)}}
+                    </mat-error>
+                </mat-form-field>
+            </span>
+
+            <ng-template #countrySelector>
+                <mat-form-field color="accent" class="full-width">
+                    <mat-label>Select Country</mat-label>
+                    <mat-select formControlName="Country" required>
+                        <mat-option *ngFor="let Country of countryOptions" [value]="Country">{{Country}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="signUpForm.get('Country')?.invalid">
+                        {{getErrorMessage('Country')}}
+                    </mat-error>
+                </mat-form-field>
+            </ng-template>
+            
+            <button type="submit">submit</button>
+        </form>
+    </div>
+</section>

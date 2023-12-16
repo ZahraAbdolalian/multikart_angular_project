@@ -38,6 +38,8 @@ import { NewProductComponent } from './shared/shared-component/new-product/new-p
 import { CollectionBannerComponent } from './collection/collection-banner/collection-banner.component';
 import { ProductsCategorizationComponent } from './collection/products-categorization/products-categorization.component';
 import { SidenavComponent } from './header/bottom-header/sidenav/sidenav.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -73,14 +75,17 @@ import { SidenavComponent } from './header/bottom-header/sidenav/sidenav.compone
     CategoryFiltersComponent,
     CollectionBannerComponent,
     ProductsCategorizationComponent,
-    SidenavComponent
+    SidenavComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
