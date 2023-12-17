@@ -8,44 +8,59 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 })
 export class CheckoutComponent implements OnInit {
 
-  signUpForm!: FormGroup;
+  checkoutForm!: FormGroup;
   formFields = ['First Name', 'Last Name', 'Phone', 'Email', 'Country', 'Address', 'City', 'State', 'Postal Code']
   countryOptions = ['India', 'USA', 'Australia']
 
-  email = new FormControl('', [Validators.required, Validators.email]);//************ */
+  dataSourceStripeJs = [
+    { title: 'CART NUMBER', value: '4242424242424242' },
+    { title: 'MM/YY', value: '2/2020' },
+    { title: 'CVC', value: '2222' },
+  ]
+
+  dataSourcePaypal = [
+    { title: 'CART NUMBER', value: '4152521541244' },
+    { title: 'MM/YY', value: '11/18' },
+    { title: 'CVC', value: '521' },
+  ]
+
+  productsList = [
+    {name : 'testname', price:1500, quantity:1}
+  ]
+
+  subtotal = 0
 
   ngOnInit(): void {
-    this.signUpForm = new FormGroup({
+    this.checkoutForm = new FormGroup({
       'First Name': new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]{3,}$/)]),
       'Last Name': new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]{3,}$/)]),
       'Phone': new FormControl('', [Validators.required, Validators.pattern(/^(\+98|0)?9\d{9}$/)]),
       'Email': new FormControl('', [Validators.required, Validators.email]),
-      'Country': new FormControl('', [Validators.required]),
-      'Address': new FormControl(''),
-      'City': new FormControl(''),
-      'State': new FormControl(''),
-      'Postal Code': new FormControl(''),
+      'Country': new FormControl('', Validators.required),
+      'Address': new FormControl('', Validators.required),
+      'City': new FormControl('', Validators.required),
+      'State': new FormControl('', Validators.required),
+      'Postal Code': new FormControl('', Validators.required),
     })
+
+    this.productsList.forEach(element => {
+      this.subtotal += (element.price * element.quantity)
+    });
   }
 
   getErrorMessage(label: string) {
-    if (this.signUpForm.get(label)?.hasError('required')) {
+    if (this.checkoutForm.get(label)?.hasError('required')) {
       return `${label} is required`
     }
-    else if (this.signUpForm.get(label)?.hasError('pattern')) {
+    else if (this.checkoutForm.get(label)?.hasError('pattern')) {
       if (label === 'Phone') {
         return 'Phone number must be a valid number.'
       }
       return `${label} must be an alphabates.`
     }
-    else if (this.signUpForm.get('email')) {
+    else if (this.checkoutForm.get('email')) {
       return 'Invalid Email'
     }
-
-    return this.email.hasError('email') ? 'Not a valid email!' : '';
-  }
-
-  onSubmit() {
-    console.log(this.signUpForm);
+    return '';
   }
 }

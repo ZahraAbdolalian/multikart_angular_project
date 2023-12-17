@@ -40,6 +40,7 @@ import { ProductsCategorizationComponent } from './collection/products-categoriz
 import { SidenavComponent } from './header/bottom-header/sidenav/sidenav.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckoutCardComponent } from './checkout/checkout-card/checkout-card.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CollectionBannerComponent,
     ProductsCategorizationComponent,
     SidenavComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    CheckoutCardComponent
   ],
   imports: [
     BrowserModule,
