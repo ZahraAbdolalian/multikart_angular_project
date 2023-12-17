@@ -1,0 +1,35 @@
+@import '../shared/shared-style/shared-style';
+
+.show {
+    display: block !important;
+}
+
+.cart_empty {
+    display: none;
+
+    div {
+        padding-top: 70px;
+        padding-bottom: 70px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.72px;
+        line-height: 29px;
+        color: $light-text-color;
+        margin-bottom: 8px;
+    }
+
+    h4 {
+        font-size: 18px;
+        letter-spacing: 0.54px;
+        line-height: 1;
+        font-weight: 400;
+    }
+}
+
+.icon_empty {
+    margin-bottom: 24px;
+}

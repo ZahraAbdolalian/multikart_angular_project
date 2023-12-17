@@ -41,6 +41,7 @@ import { SidenavComponent } from './header/bottom-header/sidenav/sidenav.compone
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutCardComponent } from './checkout/checkout-card/checkout-card.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { CheckoutCardComponent } from './checkout/checkout-card/checkout-card.co
     ProductsCategorizationComponent,
     SidenavComponent,
     CheckoutComponent,
-    CheckoutCardComponent
+    CheckoutCardComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
