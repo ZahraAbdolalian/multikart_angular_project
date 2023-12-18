@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Post } from 'src/app/post.model';
+import { Post } from 'src/app/model/post.model';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({

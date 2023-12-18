@@ -1,7 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Post } from 'src/app/post.model';
+import { Post } from 'src/app/model/post.model';
+import { CartProduct } from 'src/app/model/cart-product.model';
 import { ApiService } from 'src/app/service/api.service';
+import { UserCartService } from 'src/app/service/user-cart.service';
 
 @Component({
   selector: 'app-product-information',
@@ -47,7 +49,8 @@ export class ProductInformationComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private userCart: UserCartService
   ) { }
 
   ngOnInit(): void {
@@ -59,22 +62,22 @@ export class ProductInformationComponent implements OnInit {
         this.isLoading = true
 
         this.apiService.getProductsWithId(this.productId)
-        .subscribe(data => {
-          this.product = data
-          this.productName.emit(this.product.title)
-          this.productCategory.emit(this.product.category)
-          this.priceBeforeDiscount = (this.product.price * 100) / 40
-          this.isLoading = false
-        })
+          .subscribe(data => {
+            this.product = data
+            this.productName.emit(this.product.title)
+            this.productCategory.emit(this.product.category)
+            this.priceBeforeDiscount = (this.product.price * 100) / 40
+            this.isLoading = false
+          })
       }
-    ) 
+    )
   }
 
   reduceQuantity(quantityElem: HTMLInputElement) {
     let quantity = +quantityElem.value
     if (quantity > 1) {
       quantity--
-      if (quantity <= 15){
+      if (quantity <= 15) {
         this.stock = 'In Stock'
       }
     }
@@ -86,9 +89,23 @@ export class ProductInformationComponent implements OnInit {
     quantity++
     if (quantity < 15) {
       this.stock = 'In Stock'
-    }else {
+    } else {
       this.stock = 'Out of Stock'
     }
     quantityElem.value = quantity.toString()
+  }
+
+  addToCart(product: Post , quantity: HTMLInputElement) {
+    const newProduct : CartProduct= {
+      name: product.title,
+      id: product.id,
+      image : product.image,
+      price : product.price,
+      quantity : +quantity.value,
+      total : (product.price * +quantity.value)
+    }
+    this.userCart.addProduct(newProduct)
+    console.log(this.userCart.cartProducts);
+
   }
 }
