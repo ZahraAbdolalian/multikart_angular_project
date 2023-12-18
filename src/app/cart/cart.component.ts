@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class CartComponent {
 
+  dataSource = [
+    { image: "../../assets/images/test2.jpg", name: 'test name', price: 1200, quantity: 1, action: '', total: 1200 },
+  ]
+
+  displayedColumns: string[] = ['image', 'name', 'price', 'quantity', 'action', 'total'];
+
 }
