@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { UserCartService } from '../service/user-cart.service';
+import { MatTable } from '@angular/material/table';
+import { CartProduct } from '../model/cart-product.model';
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +14,11 @@ export class CartComponent {
 
   displayedColumns: string[] = ['image', 'name', 'price', 'quantity', 'action', 'total'];
 
-  constructor(private userCart: UserCartService) { }
+  @ViewChild(MatTable) table!: MatTable<CartProduct>;
+
+  constructor(
+    private userCart: UserCartService
+  ) { }
 
   getTotalCost() {
     return this.dataSource.map(t => t.total).reduce((acc, value) => acc + value, 0);
@@ -26,10 +32,16 @@ export class CartComponent {
     }
     quantityElem.value = quantity.toString()
   }
+
   increaseQuantity(quantityElem: HTMLInputElement, id: number) {
     let quantity = +quantityElem.value
     quantity++
     quantityElem.value = quantity.toString()
     this.userCart.updateQuantity(id, quantity)
+  }
+
+  removeProduct(id: number) {
+    this.userCart.removeProduct(id);
+    this.table.renderRows();
   }
 }
