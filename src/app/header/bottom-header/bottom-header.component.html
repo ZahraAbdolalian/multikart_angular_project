@@ -1,4 +1,4 @@
-<p class="bottom-header-container">
+<div class="bottom-header-container">
   <mat-toolbar>
     
     <!-- <app-sidenav></app-sidenav> -->
@@ -167,10 +167,10 @@
       </div>
 
       <div class="bottom_header_icon_box">
-        <a href="">
+        <a routerLink="cart">
           <img class="bottom_header_icon" src="../../../assets/images/cart.png" alt="cart" />
           <span id="mat-badge-content-0" aria-hidden="true"
-            class="mat-badge-content mat-badge-active cart-badge">0</span>
+            class="mat-badge-content mat-badge-active cart-badge">{{shoppingCartSize}}</span>
         </a>
         <mat-list class="bottom_header_icon_hover">
           <mat-list-item><a href="#">Your cart is currently empty.</a></mat-list-item>
@@ -178,4 +178,4 @@
       </div>
     </div>
   </mat-toolbar>
-</p>
+</div>

@@ -36,10 +36,14 @@
                 <a 
                 class="quantity_link_btn" 
                 [class]="stock === 'Out of Stock' ? 'disable' : 'able'" 
-                [routerLink]="['/cart']"
+                routerLink="/cart"
                 (click)="addToCart(product,quantity)"
                 >add to cart</a>
-                <a class="quantity_link_btn" [class]="stock === 'Out of Stock' ? 'disable' : 'able'" href="checkout.html">buy now</a>
+                <a 
+                class="quantity_link_btn" 
+                [class]="stock === 'Out of Stock' ? 'disable' : 'able'" 
+                routerLink="/checkout"
+                >buy now</a>
             </div>
         </div>
         <div class="product_details">

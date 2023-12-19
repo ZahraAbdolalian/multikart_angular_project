@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { CartProduct } from '../model/cart-product.model';
+import { UserCartService } from '../service/user-cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -24,11 +26,11 @@ export class CheckoutComponent implements OnInit {
     { title: 'CVC', value: '521' },
   ]
 
-  productsList = [
-    {name : 'testname', price:1500, quantity:1}
-  ]
+  productsList: CartProduct[] = this.userCart.cartProducts
 
   subtotal = 0
+
+  constructor(private userCart: UserCartService) { }
 
   ngOnInit(): void {
     this.checkoutForm = new FormGroup({

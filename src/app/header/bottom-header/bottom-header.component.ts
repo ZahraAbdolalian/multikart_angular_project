@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserCartService } from 'src/app/service/user-cart.service';
 
 @Component({
   selector: 'app-bottom-header',
@@ -7,7 +8,6 @@ import { Component } from '@angular/core';
 })
 
 export class BottomHeaderComponent {
-
 
   homeItems = [
     {
@@ -308,4 +308,9 @@ export class BottomHeaderComponent {
     }
   ]
 
+  constructor(private userCart: UserCartService) { }
+
+  get shoppingCartSize () {
+    return this.userCart.cartProducts.length;
+  }
 }

@@ -18,6 +18,7 @@ export class UserCartService {
     const existingProductIndex = this.findProductIndex(newProduct.id)
     if (existingProductIndex !== -1) {
       this.cartProducts[existingProductIndex].quantity += newProduct.quantity;
+      this.cartProducts[existingProductIndex].total = this.getTotal(existingProductIndex, newProduct.price)
     } else {
       this.cartProducts.push({ ...newProduct });
     }

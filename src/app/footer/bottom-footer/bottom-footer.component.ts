@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class BottomFooterComponent {
   iconsList = ['fa-facebook', 'fa-google-plus', 'fa-twitter', 'fa-instagram', 'fa-rss']
 
-  categoriesList = ['Womens Fashion', 'Mens Fashion', 'Kids Fashion', 'Featured']
+  categoriesList = ['Electronics', 'Jewelery', "Men's clothing", "Women's clothing"]
   chooseList = ['shipping & return', 'secure shopping', 'gallary', 'affiliates', 'contacts']
   informationsList = [
     { text: 'Multikart Demo Store, Demo Store India 345-659', icon: 'fa-map-marker' },

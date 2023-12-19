@@ -2,7 +2,7 @@
   <div class="slider_contents slider_effect">
     <h4 class="slider_subtitile">{{ subtitle }}</h4>
     <h1 class="slider_title">{{ title }}</h1>
-    <a href="collection.html" class="slider_btn">Shop now</a>
+    <a [routerLink]="['/collection','electronics']" class="slider_btn">Shop now</a>
   </div>
 
   <div class="arrow_left" (click)="sliderHandler()">

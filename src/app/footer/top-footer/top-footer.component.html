@@ -6,9 +6,18 @@
     </p>
   </div>
   <div class="footer_top_right">
-    <form action="">
-      <input class="footer_input" matInput placeholder="Enter your email" />
-      <button class="footer_btn" type="submit">subscribe</button>
+    <form class="example-form">
+      <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
     </form>
+    <button mat-flat-button color="primary" class="footer_top_btn">subscribe</button>
   </div>
 </div>

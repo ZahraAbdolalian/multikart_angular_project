@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-top-footer',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./top-footer.component.scss']
 })
 export class TopFooterComponent {
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
 }

@@ -33,39 +33,19 @@
     letter-spacing: 0.42px;
 }
 
-.footer_input {
-    width: 345px;
-    height: 25px;
-    padding: 13px;
-    margin: 0 16px;
-    border: 1px solid $border-color;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    outline: none;
+mat-form-field{
+    width: 300px;
 }
 
-.footer_btn {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: $white-color;
-    background-image: linear-gradient(30deg, $main-color 50%,
-            transparent 50%) !important;
-    border: 2px solid $main-color;
-    padding: 13px 29px;
-    background-size: 850px;
-    background-repeat: no-repeat;
-    background-position: 0;
-    transition: all 300ms ease-in-out;
-    margin-top: 20px;
-    font-weight: 700;
-    cursor: pointer;
-    line-height: 20px;
-    letter-spacing: 0.7px;
+.footer_top_right{
+    display: flex;
+}
 
-    &:hover {
-        color: $main-text-color;
-        background-color: $white-color;
-        background-position: 100%;
-    }
+.footer_top_btn{
+    width: 130px;
+    height: 56px;
+    margin-left: 20px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 700;
 }
