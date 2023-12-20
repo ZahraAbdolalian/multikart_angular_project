@@ -9,6 +9,8 @@ import { UserCartService } from 'src/app/service/user-cart.service';
 
 export class BottomHeaderComponent {
 
+  showFiller = false;
+
   home = [
     {
       name: 'electronics',

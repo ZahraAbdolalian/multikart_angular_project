@@ -47,8 +47,12 @@ mat-toolbar {
 }
 
 .multikart-logo {
-    padding: 37px 0;
-    cursor: pointer;
+    padding-left: 64px;
+
+    img {
+        padding: 37px 0;
+        cursor: pointer;
+    }
 }
 
 .bottom_header_icon {

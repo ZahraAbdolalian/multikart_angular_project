@@ -1,10 +1,7 @@
 <div class="bottom-header-container">
   <mat-toolbar>
-
-    <!-- <app-sidenav></app-sidenav> -->
-    <mat-icon class="menu_icon">menu</mat-icon>
-    <a routerLink="">
-      <img class="multikart-logo" src="../../../assets/images/multikart-logo.png" alt="multikart-logo" />
+    <a routerLink="" class="multikart-logo">
+      <img src="../../../assets/images/multikart-logo.png" alt="multikart-logo" />
     </a>
     <span class="example-spacer"></span>
     <div>
@@ -26,7 +23,7 @@
         </mat-list-item>
 
         <mat-list-item class="header_bottom_item">
-            <ng-template #featuresContainer>
+          <ng-template #featuresContainer>
             <span class="header_item_title">features</span>
             <i class="fa-solid fa-chevron-down header_item_icon"></i>
             <mat-list class="header_submenu features">
@@ -45,7 +42,7 @@
               <span class="new-badge">new</span>
             </span>
           </ng-template>
-          </mat-list-item>
+        </mat-list-item>
       </mat-list>
     </div>
 
