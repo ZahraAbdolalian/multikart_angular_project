@@ -1,6 +1,6 @@
 <div class="bottom-header-container">
   <mat-toolbar>
-    
+
     <!-- <app-sidenav></app-sidenav> -->
     <mat-icon class="menu_icon">menu</mat-icon>
     <a routerLink="">
@@ -9,135 +9,43 @@
     <span class="example-spacer"></span>
     <div>
       <mat-list class="header_bottom_content">
-        <mat-list-item class="header_bottom_item">
-          <span class="header_item_title">home</span>
-          <i class="fa-solid fa-chevron-down header_item_icon"></i>
-          <mat-list class="header_submenu">
-            <ng-container *ngFor="let item of homeItems">
-              <mat-list-item class="header_submenu_item" *ngIf="item.link">
-                <a [routerLink]="['/', item.link]">
-                  {{ item.name }}
-                  <span class="angle_right" *ngIf="item.subSubmenu">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                  </span>
-                </a>
-
-                <mat-list class="sub_submenu" *ngIf="item.subSubmenu">
-                  <ng-container *ngFor="let item of item.subSubmenu">
-                    <mat-list-item>
-                      <a href="">{{ item }}</a>
-                    </mat-list-item>
-                  </ng-container>
-                </mat-list>
-              </mat-list-item>
-            </ng-container>
-          </mat-list>
-
-        </mat-list-item>
-        <mat-list-item class="header_bottom_item">
-          <span class="header_item_title">shop</span>
-          <i class="fa-solid fa-chevron-down header_item_icon"></i>
-
-          <mat-list class="header_submenu">
-            <ng-container *ngFor="let item of shopItems">
-              <mat-list-item class="header_submenu_item" *ngIf="item.link">
-                <a [routerLink]="['/', item.link]">
-                  {{ item.name }}
-                </a>
-              </mat-list-item>
-            </ng-container>
-          </mat-list>
-        </mat-list-item>
-
-        <mat-list-item class="header_bottom_item">
-          <span class="header_item_title">products</span>
-          <i class="fa-solid fa-chevron-down header_item_icon"></i>
-          <mat-list class="header_submenu">
-            <ng-container *ngFor="let item of productsItem">
-              <mat-list-item class="header_submenu_item" *ngIf="item.link">
-                <a [routerLink]="['/', item.link]">
-                  {{ item.name }}
-                  <span class="angle_right" *ngIf="item.subSubmenu">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                  </span>
-                </a>
-
-                <!-- <mat-list class="sub_submenu" *ngIf="item.subSubmenu">
-                    <ng-container *ngFor="let item of item.subSubmenu">
-                        {{item}}
-                        <mat-list-item >
-                            <a href="">{{ item }}</a>
-                        </mat-list-item>
-                    </ng-container>
-                </mat-list> -->
-              </mat-list-item>
-            </ng-container>
-          </mat-list>
-        </mat-list-item>
-
-
-        <mat-list-item class="header_bottom_item">
-          <span class="header_item_title">features</span>
-          <i class="fa-solid fa-chevron-down header_item_icon"></i>
-
-          <mat-list class="header_submenu features">
-            <ng-container *ngFor="let item of featuresItem">
-              <div class="header_submenu_container">
-                <h3>{{item.name}}</h3>
-                <mat-list-item class="header_submenu_item" *ngFor="let item of item.options">
-                  <a [routerLink]="['/', item.link]">
-                    {{ item.title }}
+        <mat-list-item class="header_bottom_item" *ngFor="let headerItem of headerItems">
+          <div *ngIf="headerItem.name != 'features'; else featuresContainer">
+            <span class="header_item_title">{{headerItem.name}}</span>
+            <i class="fa-solid fa-chevron-down header_item_icon"></i>
+            <mat-list class="header_submenu">
+              <ng-container *ngFor="let item of headerItem.list">
+                <mat-list-item class="header_submenu_item" *ngIf="item.link">
+                  <a [routerLink]="['/collection', item.link]">
+                    {{ item.name }}
                   </a>
                 </mat-list-item>
-              </div>
-
-            </ng-container>
-          </mat-list>
-          <span class="new-badge-box">
-            <span class="new-badge">new</span>
-          </span>
+              </ng-container>
+            </mat-list>
+          </div>
         </mat-list-item>
-
 
         <mat-list-item class="header_bottom_item">
-          <span class="header_item_title">pages</span>
-          <i class="fa-solid fa-chevron-down header_item_icon"></i>
-          <mat-list class="header_submenu">
-            <ng-container *ngFor="let item of pagesItem">
-              <mat-list-item class="header_submenu_item" *ngIf="item.link">
-                <a [routerLink]="['/', item.link]">
-                  {{ item.name }}
-                  <span class="angle_right" *ngIf="item.subSubmenu">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                  </span>
-                  <span class="new_tag" *ngIf="item.newTag">New</span>
-                </a>
-
-                <!-- <mat-list class="sub_submenu" *ngIf="item.subSubmenu">
-                    <ng-container *ngFor="let item of item.subSubmenu">
-                        {{item}}
-                        <mat-list-item >
-                            <a href="">{{ item }}</a>
-                        </mat-list-item>
-                    </ng-container>
-                </mat-list> -->
-              </mat-list-item>
-            </ng-container>
-          </mat-list>
-        </mat-list-item>
-        <mat-list-item class="header_bottom_item">
-          <span class="header_item_title">blogs</span>
-          <i class="fa-solid fa-chevron-down header_item_icon"></i>
-          <mat-list class="header_submenu">
-            <ng-container *ngFor="let item of blogItems">
-              <mat-list-item class="header_submenu_item" *ngIf="item.link">
-                <a [routerLink]="['/', item.link]">
-                  {{ item.name }}
-                </a>
-              </mat-list-item>
-            </ng-container>
-          </mat-list>
-        </mat-list-item>
+            <ng-template #featuresContainer>
+            <span class="header_item_title">features</span>
+            <i class="fa-solid fa-chevron-down header_item_icon"></i>
+            <mat-list class="header_submenu features">
+              <ng-container *ngFor="let item of features">
+                <div class="header_submenu_container">
+                  <h3>{{item.name}}</h3>
+                  <mat-list-item class="header_submenu_item" *ngFor="let item of item.options">
+                    <a [routerLink]="['/', item.link]">
+                      {{ item.title }}
+                    </a>
+                  </mat-list-item>
+                </div>
+              </ng-container>
+            </mat-list>
+            <span class="new-badge-box">
+              <span class="new-badge">new</span>
+            </span>
+          </ng-template>
+          </mat-list-item>
       </mat-list>
     </div>
 

@@ -9,63 +9,26 @@ import { UserCartService } from 'src/app/service/user-cart.service';
 
 export class BottomHeaderComponent {
 
-  homeItems = [
+  home = [
     {
-      name: 'Clothing',
-      subSubmenu: ['Fashion 01', 'Fashion 02', 'Fashion 03'],
-      link: '#',
+      name: 'electronics',
+      link: 'electronics',
     },
     {
-      name: 'Vegetable',
-      link: '#',
+      name: 'jewelery',
+      link: 'jewelery',
     },
     {
-      name: 'Watch',
-      link: '#',
+      name: "men's clothing",
+      link: "men's clothing",
     },
     {
-      name: 'Furniture',
-      link: '#',
-    },
-    {
-      name: 'Flower',
-      link: '#',
-    },
-    {
-      name: 'Beauty',
-      link: '#',
-    },
-    {
-      name: 'Electronics',
-      link: '#',
-    },
-    {
-      name: 'Pets',
-      link: '#',
-    },
-    {
-      name: 'Gym',
-      link: '#',
-    },
-    {
-      name: 'Tools',
-      link: '#',
-    },
-    {
-      name: 'Shoes',
-      link: '#',
-    },
-    {
-      name: 'Bags',
-      link: '#',
-    },
-    {
-      name: 'Marijuana',
-      link: '#',
-    },
+      name: "women's clothing",
+      link: "women's clothing",
+    }
   ];
 
-  shopItems = [
+  shop = [
     {
       name: 'Left Sidebar',
       link: '#',
@@ -84,10 +47,9 @@ export class BottomHeaderComponent {
     },
   ];
 
-  productsItem = [
+  products = [
     {
       name: 'Sidebar',
-      subSubmenu: ['Left Sidebar', 'Right Sidebar', 'No sidebar'],
       link: '#',
     },
     {
@@ -108,7 +70,7 @@ export class BottomHeaderComponent {
     },
   ]
 
-  featuresItem = [
+  features = [
     {
       name: 'portfolio',
       options: [
@@ -237,10 +199,9 @@ export class BottomHeaderComponent {
 
   ]
 
-  pagesItem = [
+  pages = [
     {
-      name: 'Account',
-      subSubmenu: ['Wishlist', 'Cart', 'Dashboard', 'Login', 'Register', 'Contact', 'Forget Password', 'Profile', 'Checkout'],
+      name: 'Home',
       link: '#',
     }, {
       name: 'About us',
@@ -251,17 +212,16 @@ export class BottomHeaderComponent {
     }, {
       name: 'Typography',
       link: '#',
-      newTag: true
+      // newTag: true
     }, {
       name: 'Review',
       link: '#',
-      newTag: true
+      // newTag: true
     }, {
       name: 'Order Success',
       link: '#',
     }, {
       name: 'Compare',
-      subSubmenu: ['Compare 1', 'Compare 2'],
       link: '#',
     }, {
       name: 'Collection',
@@ -275,14 +235,14 @@ export class BottomHeaderComponent {
     }, {
       name: 'Coming Soon',
       link: '#',
-      newTag: true
+      // newTag: true
     }, {
       name: 'Faq',
       link: '#',
     },
   ]
 
-  blogItems = [
+  blogs = [
     {
       name: 'Left Sidebar',
       link: '#',
@@ -301,6 +261,15 @@ export class BottomHeaderComponent {
     },
   ]
 
+  headerItems = [
+    { name: 'home', list: this.home },
+    { name: 'shop', list:this.shop},
+    { name: 'products', list:this.products},
+    { name: 'features'},
+    { name: 'pages', list:this.pages},
+    { name: 'blogs', list:this.blogs}
+  ]
+
   settingItems = [
     {
       language: ['English', 'French'],
@@ -310,7 +279,7 @@ export class BottomHeaderComponent {
 
   constructor(private userCart: UserCartService) { }
 
-  get shoppingCartSize () {
+  get shoppingCartSize() {
     return this.userCart.cartProducts.length;
   }
 }
