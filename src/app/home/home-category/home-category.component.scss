@@ -71,41 +71,10 @@ mat-card-actions {
 }
 
 .category_link {
-    display: inline-block;
     text-transform: uppercase;
     font-weight: 700;
-    color: $main-text-color;
     padding: 13px 29px;
     margin-top: 20px;
     letter-spacing: 0.7px;
     font-size: 14px;
-    border: 2px solid $main-color;
-    transition: 0.3s ease-in-out;
-    position: relative;
-
-    &::before {
-        content: "";
-        z-index: -2;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        right: 50%;
-        bottom: 0;
-        opacity: 0;
-        background-color: $main-color;
-        transition: 0.5s all ease;
-    }
-
-    &:hover::before {
-        transition: 0.5s all ease;
-        left: 0;
-        right: 0;
-        opacity: 1;
-    }
-
-    &:hover {
-        color: $white-color;
-        background-color: $main-color;
-        transition: 0.3s ease-in-out;
-    }
 }

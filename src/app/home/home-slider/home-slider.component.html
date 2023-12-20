@@ -2,7 +2,11 @@
   <div class="slider_contents slider_effect">
     <h4 class="slider_subtitile">{{ subtitle }}</h4>
     <h1 class="slider_title">{{ title }}</h1>
-    <a [routerLink]="['/collection','electronics']" class="slider_btn">Shop now</a>
+    <button 
+    mat-raised-button 
+    color="primary" 
+    [routerLink]="['/collection','electronics']" 
+    class="slider_btn">Shop now</button>
   </div>
 
   <div class="arrow_left" (click)="sliderHandler()">

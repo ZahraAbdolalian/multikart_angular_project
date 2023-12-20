@@ -1,15 +1,30 @@
 <mat-drawer-container class="container" autosize>
     <mat-drawer #drawer class="sidenav" mode="over">
         <a class="back_btn" (click)="drawer.toggle()">
-            <i _ngcontent-serverapp-c3830647931="" aria-hidden="true" class="fa fa-angle-left pe-2"></i>
+            <i aria-hidden="true" class="fa fa-angle-left"></i>
             back
         </a>
         <mat-list role="list">
-            <mat-list-item role="listitem">clothing</mat-list-item>
-            <mat-list-item role="listitem">bags</mat-list-item>
-            <mat-list-item role="listitem">footwear</mat-list-item>
-            <mat-list-item role="listitem">watches</mat-list-item>
-            <mat-list-item role="listitem">Accessories</mat-list-item>
+            <mat-list-item role="listitem" class="menu_item">
+                <a routerLink="home" (click)="drawer.toggle()">home</a>
+            </mat-list-item>
+            <mat-list-item role="listitem" class="menu_item" >collection
+                <i [matMenuTriggerFor]="menu" aria-hidden="true" class="fa fa-angle-right"></i>
+                <mat-menu #menu="matMenu" class="mat_menu" xPosition="after">
+                    <button 
+                    mat-menu-item 
+                    [routerLink]="['/collection',item]" 
+                    *ngFor="let item of collection"
+                    (click)="drawer.toggle()"
+                    >{{item}}</button>
+                </mat-menu>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <a routerLink="cart" (click)="drawer.toggle()">cart</a>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <a routerLink="checkout" (click)="drawer.toggle()">checkout</a>
+            </mat-list-item>
         </mat-list>
     </mat-drawer>
     <mat-drawer-content>

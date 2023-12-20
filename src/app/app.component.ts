@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'multikart_angular_project';
+
+  collection = ['Electronics', 'Jewelery', "Men's clothing", "Women's clothing"]
 }

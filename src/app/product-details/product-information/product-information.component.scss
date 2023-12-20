@@ -126,24 +126,16 @@
     color: #585858;
 }
 
-.quantity_link a {
+.quantity_link_btn {
     padding: 10px 25px;
-    background-image: linear-gradient(30deg, $main-color 50%, transparent 50%);
-    color: $white-color;
     text-transform: uppercase;
-    border: 2px solid $main-color;
-    background-size: 850px;
-    background-repeat: no-repeat;
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: 0.7px;
     margin-right: 7px;
-    transition: background 300ms ease-in-out;
 }
 
-
-.quantity_link a.able:hover,
 .submit_btn:hover {
     background-position: 100%;
     color: $main-text-color;
