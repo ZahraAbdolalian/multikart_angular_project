@@ -285,3 +285,26 @@ mat-toolbar {
         padding-bottom: 5px;
     }
 }
+
+.card_title{
+    width: 170px;
+    text-wrap: balance;
+}
+
+.card_image{
+    margin-bottom: 8px;
+}
+
+.card_action{
+    display: flex;
+    justify-content: space-between;
+
+    button{
+        font-size: 14px;
+
+        &:hover {
+            color: $main-color;
+            transition: 0.5s ease;
+        }
+    }
+}

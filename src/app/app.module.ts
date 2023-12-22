@@ -37,11 +37,12 @@ import { CategoryFiltersComponent } from './collection/category-filters/category
 import { NewProductComponent } from './shared/shared-component/new-product/new-product.component';
 import { CollectionBannerComponent } from './collection/collection-banner/collection-banner.component';
 import { ProductsCategorizationComponent } from './collection/products-categorization/products-categorization.component';
-import { SidenavComponent } from './header/bottom-header/sidenav/sidenav.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutCardComponent } from './checkout/checkout-card/checkout-card.component';
 import { CartComponent } from './cart/cart.component';
+import { SpinnerComponent } from './shared/shared-component/spinner/spinner.component';
+import { TopButtonComponent } from './shared/shared-component/top-button/top-button.component';
 
 @NgModule({
   declarations: [
@@ -77,10 +78,11 @@ import { CartComponent } from './cart/cart.component';
     CategoryFiltersComponent,
     CollectionBannerComponent,
     ProductsCategorizationComponent,
-    SidenavComponent,
     CheckoutComponent,
     CheckoutCardComponent,
-    CartComponent
+    CartComponent,
+    SpinnerComponent,
+    TopButtonComponent
   ],
   imports: [
     BrowserModule,

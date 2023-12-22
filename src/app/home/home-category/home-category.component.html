@@ -1,4 +1,6 @@
-<section class="category">
+<app-spinner *ngIf="isLoading"></app-spinner>
+
+<section class="category" *ngIf="!isLoading">
     <div class="category_product_box" *ngFor="let item of categoryList;let i = index">
         <mat-card ng-no-style class="category_product" >
             <div>

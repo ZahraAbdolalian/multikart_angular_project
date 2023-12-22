@@ -1,16 +1,19 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Post } from 'src/app/model/post.model';
 import { CartProduct } from 'src/app/model/cart-product.model';
 import { ApiService } from 'src/app/service/api.service';
 import { UserCartService } from 'src/app/service/user-cart.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product-information',
   templateUrl: './product-information.component.html',
   styleUrls: ['./product-information.component.scss']
 })
-export class ProductInformationComponent implements OnInit {
+export class ProductInformationComponent implements OnInit, OnDestroy {
+  private routeSubscription!: Subscription;
+  private apiSubscription!: Subscription;
 
   @Output() productName = new EventEmitter<string>();
   @Output() productCategory = new EventEmitter<string>();
@@ -55,13 +58,13 @@ export class ProductInformationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.route.params.subscribe(
+    this.routeSubscription = this.route.params.subscribe(
       (params: Params) => {
 
         this.productId = params['id']
         this.isLoading = true
 
-        this.apiService.getProductsWithId(this.productId)
+        this.apiSubscription = this.apiService.getProductsWithId(this.productId)
           .subscribe(data => {
             this.product = data
             this.productName.emit(this.product.title)
@@ -106,6 +109,10 @@ export class ProductInformationComponent implements OnInit {
     }
     this.userCart.addProduct(newProduct)
     console.log(this.userCart.cartProducts);
+  }
 
+  ngOnDestroy(): void {
+      this.routeSubscription.unsubscribe();
+      this.apiSubscription.unsubscribe();
   }
 }

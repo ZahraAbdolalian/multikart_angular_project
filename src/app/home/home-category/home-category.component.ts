@@ -10,11 +10,13 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class HomeCategoryComponent implements OnInit {
   categoryList: Post[] = []
+  isLoading = true
   categoryNameList: string[] = []
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.isLoading = true
     this.apiService.getCategoriesName()
       .subscribe(data => {
         this.categoryNameList = data
@@ -25,6 +27,7 @@ export class HomeCategoryComponent implements OnInit {
               this.categoryList = [...this.categoryList, ...data]
             })
         }
+        this.isLoading = false
       })
   }
 }

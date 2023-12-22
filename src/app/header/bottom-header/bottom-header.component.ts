@@ -284,4 +284,8 @@ export class BottomHeaderComponent {
   get shoppingCartSize() {
     return this.userCart.cartProducts.length;
   }
+
+  get cartProduct(){
+    return this.userCart.cartProducts;
+  }
 }

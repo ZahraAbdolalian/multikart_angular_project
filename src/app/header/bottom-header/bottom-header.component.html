@@ -1,6 +1,6 @@
 <div class="bottom-header-container">
   <mat-toolbar>
-    <a routerLink="" class="multikart-logo">
+    <a routerLink="home" class="multikart-logo">
       <img src="../../../assets/images/multikart-logo.png" alt="multikart-logo" />
     </a>
     <span class="example-spacer"></span>
@@ -78,7 +78,22 @@
             class="mat-badge-content mat-badge-active cart-badge">{{shoppingCartSize}}</span>
         </a>
         <mat-list class="bottom_header_icon_hover">
-          <mat-list-item><a href="#">Your cart is currently empty.</a></mat-list-item>
+          <mat-list-item *ngIf="!cartProduct.length; else productList"><a href="#">Your cart is currently empty.</a></mat-list-item>
+          <ng-template #productList>
+            <mat-card class="example-card" *ngFor="let item of cartProduct">
+              <mat-card-header>
+                <mat-card-title-group>
+                  <mat-card-title class="card_title">{{item.name}}</mat-card-title>
+                  <mat-card-subtitle>{{item.price | currency}}</mat-card-subtitle>
+                  <img class="card_image" mat-card-sm-image [src]="item.image" >
+                </mat-card-title-group>
+              </mat-card-header>
+            </mat-card>
+            <mat-card-actions class="card_action">
+              <button mat-button routerLink="cart">View Cart</button>
+              <button mat-button routerLink="checkout">Checkout</button>
+            </mat-card-actions>
+          </ng-template>
         </mat-list>
       </div>
     </div>

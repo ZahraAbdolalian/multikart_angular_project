@@ -33,7 +33,7 @@
     padding: 70px 12px;
     max-width: 1400px;
     margin: 0 auto;
-    
+
     form {
         width: 100%;
         border-bottom: 1px solid $border-color;
@@ -53,6 +53,7 @@
 
     img {
         height: 106px;
+        width: 95px;
         padding-top: 8px;
         padding-bottom: 8px;
     }
@@ -119,7 +120,7 @@ mat-icon {
     color: #585858;
 }
 
-.total_footer{
+.total_footer {
     font-family: roboto;
     font-size: 15px;
     font-weight: 700;
@@ -130,8 +131,22 @@ mat-icon {
     padding-top: 30px;
     border-top: 1px solid $border-color;
 
-    h2{
+    h2 {
         font-size: 24px;
         padding-left: 60px;
+    }
+}
+
+.cart_btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 35px;
+
+    button {
+        padding: 22px;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 700;
     }
 }
