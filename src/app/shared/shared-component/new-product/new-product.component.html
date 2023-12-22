@@ -5,6 +5,9 @@
             <i class="fa-solid fa-angle-left new_angle_left" (click)="paginator()"></i>
             <i class="fa-solid fa-angle-right new_angle_right" (click)="paginator()"></i>
         </div>
+
+        <app-spinner *ngIf="!selectedProducts"></app-spinner>
+
         <div class="new_product_box">
             <div class="new_product_content" *ngFor="let item of selectedProducts">
                 <div class="new_product_img_box">
@@ -15,7 +18,7 @@
                 <div>
                     <a [routerLink]="['/product-details',item.id]" class="new_product_name">{{item.title}}</a>
                     <h4 class="new_product_price">
-                        ${{item.price}}
+                        {{item.price | currency}}
                     </h4>
                 </div>
             </div>

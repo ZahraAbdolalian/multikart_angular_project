@@ -1,3 +1,5 @@
+@import '../../shared/shared-style/shared-style';
+
 .banner_container {
     display: flex;
     justify-content: flex-start;
@@ -46,7 +48,7 @@
 
 .banner_info_subtitle,
 .banner_info_title {
-    color: #ffffff;
+    color: $white-color;
     font-weight: 700;
     letter-spacing: 1.8px;
     text-transform: uppercase;

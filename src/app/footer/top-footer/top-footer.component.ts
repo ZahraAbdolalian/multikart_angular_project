@@ -8,5 +8,4 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class TopFooterComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-
 }

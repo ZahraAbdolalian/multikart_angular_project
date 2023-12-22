@@ -3,9 +3,7 @@
         <h2>Related Products</h2>
     </div>
 
-    <div class="spinner" *ngIf="!relatedProducts">
-        <mat-spinner color="primary" value="75"></mat-spinner>
-    </div>
+    <app-spinner *ngIf="!relatedProducts"></app-spinner>
 
     <div class="related_product_list" *ngIf="relatedProducts">
         <div class="related_product_item" *ngFor="let item of relatedProducts">

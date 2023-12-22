@@ -1,5 +1,9 @@
 @import '../../shared/shared-style/shared-style';
 
+.products_table{
+  padding-left: 5px;
+}
+
 td {
   font-size: 16px;
   border-right: 1px solid $border-color;

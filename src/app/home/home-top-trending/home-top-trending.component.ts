@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { Post } from 'src/app/model/post.model';
 import { ApiService } from 'src/app/service/api.service';
@@ -9,7 +10,9 @@ import { ApiService } from 'src/app/service/api.service';
   templateUrl: './home-top-trending.component.html',
   styleUrls: ['./home-top-trending.component.scss']
 })
-export class HomeTopTrendingComponent implements OnInit{
+export class HomeTopTrendingComponent implements OnInit, OnDestroy{
+  private apiSubscription!: Subscription;
+
   labels = ['NEW ARRIVAL','ON SALE','BEST SELLERS']
   starsArray: any[] = new Array(5);
   newArrivalItems !:Post[]
@@ -20,7 +23,7 @@ export class HomeTopTrendingComponent implements OnInit{
     ){}
 
   ngOnInit(): void {
-    this.apiService.getSomeProducts(8).subscribe(data => {
+    this.apiSubscription = this.apiService.getSomeProducts(8).subscribe(data => {
       this.newArrivalItems = data
       console.log(this.newArrivalItems);
     })
@@ -28,5 +31,9 @@ export class HomeTopTrendingComponent implements OnInit{
 
   onLoadProductDetails(){
     this.router.navigate(['/product-details'])
+  }
+
+  ngOnDestroy(): void {
+      this.apiSubscription.unsubscribe()
   }
 }

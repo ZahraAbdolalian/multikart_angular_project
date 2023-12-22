@@ -10,10 +10,10 @@
         <div class="product_details">
             <h2 class="product_name">{{product.title}}</h2>
             <h4 class="product_discount_price">
-                <del>${{priceBeforeDiscount}}</del>
+                <del>{{priceBeforeDiscount | currency}}</del>
                 <span>40% Off</span>
             </h4>
-            <h3 class="product_price">${{product.price}}</h3>
+            <h3 class="product_price">{{product.price | currency}}</h3>
             <ul class="product_color">
 
             </ul>
@@ -36,7 +36,8 @@
                     (click)="addToCart(product,quantity)">add to cart</button>
 
                 <button mat-raised-button color="primary" class="quantity_link_btn"
-                    [class]="stock === 'Out of Stock' ? 'disable' : 'able'" routerLink="/checkout">buy now</button>
+                    [class]="stock === 'Out of Stock' ? 'disable' : 'able'" routerLink="/checkout"
+                    (click)="addToCart(product,quantity)">buy now</button>
             </div>
         </div>
         <div class="product_details">

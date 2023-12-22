@@ -7,9 +7,7 @@
         </div>
     </div>
 
-    <div class="spinner" *ngIf="!productsArray">
-        <mat-spinner color="primary" value="75"></mat-spinner>
-      </div>
+    <app-spinner *ngIf="!productsArray"></app-spinner>
 
     <div class="special_container" *ngIf="productsArray">
         <div class="special_box">
@@ -25,7 +23,7 @@
                     <a [routerLink]="['/product-details',item.id]">
                         <h6 class="special_name">{{item.title}}</h6>
                     </a>
-                    <h4 class="special_price"> {{item.price}}
+                    <h4 class="special_price"> {{item.price | currency}}
                     </h4>
                 </div>
             </div>
@@ -69,7 +67,7 @@
                         <a [routerLink]="['/product-details',item.id]">
                             <h6 class="special_name">{{item.title}}</h6>
                         </a>
-                        <h4 class="special_price"> ${{item.price}}
+                        <h4 class="special_price"> {{item.price | currency}}
                         </h4>
                     </div>
                 </div>
@@ -89,7 +87,7 @@
                     <a [routerLink]="['/product-details',item.id]">
                         <h6 class="special_name">{{item.title}}</h6>
                     </a>
-                    <h4 class="special_price"> ${{item.price}}
+                    <h4 class="special_price"> {{item.price | currency}}
                     </h4>
                 </div>
             </div>

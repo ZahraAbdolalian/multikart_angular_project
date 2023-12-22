@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+
 import { Post } from 'src/app/model/post.model';
 import { ApiService } from 'src/app/service/api.service';
 
@@ -7,16 +9,17 @@ import { ApiService } from 'src/app/service/api.service';
   templateUrl: './new-product.component.html',
   styleUrls: ['./new-product.component.scss']
 })
-export class NewProductComponent implements OnInit {
+export class NewProductComponent implements OnInit, OnDestroy {
+  private apiSubscription!: Subscription;
 
   newProductsArray: Post[] = []
-  selectedProducts: Post[] = []
+  selectedProducts!: Post[]
   currentSlide = 1
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getSomeProducts(6)
+    this.apiSubscription = this.apiService.getSomeProducts(6)
       .subscribe(data => {
         this.newProductsArray = data
         this.selectedProducts = this.newProductsArray.slice(0, 3)
@@ -31,5 +34,9 @@ export class NewProductComponent implements OnInit {
       this.selectedProducts = this.newProductsArray.slice(0, 3)
       this.currentSlide = 1
     }
+  }
+
+  ngOnDestroy(): void {
+      this.apiSubscription.unsubscribe()
   }
 }

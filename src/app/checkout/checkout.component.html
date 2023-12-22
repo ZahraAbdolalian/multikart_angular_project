@@ -47,14 +47,18 @@
                     </div>
 
                     <div class="product_detail" *ngFor="let item of productsList">
-                        <p class="product_name">{{item.name}}</p>
-                        <p class="product_price last_child">${{item.price}}</p>
+                        <p class="product_name">
+                            {{item.name}} 
+                            <mat-icon>close</mat-icon> 
+                            {{item.quantity}} 
+                        </p>
+                        <p class="product_price last_child">{{item.price | currency}}</p>
                     </div>
 
                     <div class="subtotal_box">
                         <div class="subtotal">
                             <p class="total_title">subtotal</p>
-                            <p class="total_price last_child">${{subtotal | number:'1.2-2'}}</p>
+                            <p class="total_price last_child">{{subtotal | currency}}</p>
                         </div>
                         <div class="shipping">
                             <p class="total_title">shipping</p>
@@ -74,7 +78,7 @@
                     </div>
                     <div class="total_box">
                         <p class="total">total</p>
-                        <p class="total_price last_child">${{subtotal}}</p>
+                        <p class="total_price last_child">{{subtotal | currency}}</p>
                     </div>
                 </div>
                 <div class="payment">

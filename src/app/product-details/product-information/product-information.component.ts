@@ -1,10 +1,11 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs';
+
 import { Post } from 'src/app/model/post.model';
 import { CartProduct } from 'src/app/model/cart-product.model';
 import { ApiService } from 'src/app/service/api.service';
 import { UserCartService } from 'src/app/service/user-cart.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product-information',

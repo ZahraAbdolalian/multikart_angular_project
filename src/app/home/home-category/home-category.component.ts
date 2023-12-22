@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { Post } from 'src/app/model/post.model';
 import { ApiService } from 'src/app/service/api.service';
@@ -8,7 +9,10 @@ import { ApiService } from 'src/app/service/api.service';
   templateUrl: './home-category.component.html',
   styleUrls: ['./home-category.component.scss']
 })
-export class HomeCategoryComponent implements OnInit {
+export class HomeCategoryComponent implements OnInit, OnDestroy {
+  private categoriesNameSubscription!: Subscription;
+  private categoriProductsSubscription!: Subscription;
+
   categoryList: Post[] = []
   isLoading = true
   categoryNameList: string[] = []
@@ -17,17 +21,22 @@ export class HomeCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true
-    this.apiService.getCategoriesName()
+    this.categoriesNameSubscription = this.apiService.getCategoriesName()
       .subscribe(data => {
         this.categoryNameList = data
 
         for (let index = 0; index < this.categoryNameList.length; index++) {
-          this.apiService.getSomeProductInCategory(1, this.categoryNameList[index])
+          this.categoriProductsSubscription = this.apiService.getSomeProductInCategory(1, this.categoryNameList[index])
             .subscribe(data => {
               this.categoryList = [...this.categoryList, ...data]
             })
         }
         this.isLoading = false
       })
+  }
+
+  ngOnDestroy(): void {
+      this.categoriesNameSubscription.unsubscribe();
+      this.categoriProductsSubscription.unsubscribe();
   }
 }

@@ -5,5 +5,4 @@ export interface CartProduct {
     price: number,
     quantity: number,
     total : number
-
 }
